@@ -1,0 +1,33 @@
+@import '../../core';
+
+.taxonomy-filters {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space--xs);
+
+    @include mq(medium) {
+        grid-auto-flow: column;
+    }
+
+    .blocks > & {
+        margin-top: var(--space--l);
+        margin-bottom: var(--space--l);
+    }
+
+    &__label {
+        text-align: center;
+    }
+
+    &__list {
+        --grid--column-gap: var(--space--xs);
+
+        justify-content: center;
+    }
+
+    &__item {
+        &--current {
+            @include button--theme-2;
+        }
+    }
+}
