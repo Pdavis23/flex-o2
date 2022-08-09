@@ -5,17 +5,34 @@
 
     @font-face {
         font-display: swap;
-        font-family: 'Lora';
+        font-family: 'Titillium Web';
         font-style: normal;
-        font-weight: normal;
-        src: url('./static/subset-Lora-Regular.woff2') format('woff2');
+        font-weight: 200;
+        src: url('./static/titillium-web-v15-latin-200.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
     }
 
     @font-face {
         font-display: swap;
-        font-family: 'Lora';
-        font-style: italic;
-        font-weight: normal;
-        src: url('./static/subset-Lora-Italic.woff2') format('woff2');
+        font-family: 'Titillium Web';
+        font-style: normal;
+        font-weight: 400;
+        src: url('./static/titillium-web-v15-latin-regular.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: 'Titillium Web';
+        font-style: normal;
+        font-weight: 600;
+        src: url('./static/titillium-web-v15-latin-600.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+    }
+
+
+    @font-face {
+        font-display: swap;
+        font-family: 'Titillium Web';
+        font-style: normal;
+        font-weight: 700;
+        src: url('./static/titillium-web-v15-latin-700.woff') format('woff'); /* Chrome 26+, Opera 23+, Firefox 39+ */
     }
 }

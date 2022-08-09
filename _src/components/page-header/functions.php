@@ -12,7 +12,6 @@ function filterArgs(array $args): array
         'type' => '',
         'show' => true,
         'image-position' => 'background',
-        'background' => 'brand-1',
         'attributes' => [],
         'content' => [],
     ], $args);

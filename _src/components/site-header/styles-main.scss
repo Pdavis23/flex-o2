@@ -10,6 +10,7 @@ $site-header--top--background: 'white';
 .site-header {
     --site-header--height: #{rem(70)};
     --site-header--logo-width: #{rem(120)};
+    --site-header--logo-height: #{rem(52)};
     --site-header--menu--duration: 250ms;
     --site-header--menu--ease: ease-in-out;
 
@@ -31,8 +32,9 @@ $site-header--top--background: 'white';
     }
 
     @include mq('site-header') {
-        --site-header--logo-width: #{rem(170)};
-        --site-header--height: #{rem(74)};
+        --site-header--logo-width: #{rem(388)};
+        --site-header--logo-height: #{rem(72)};
+        --site-header--height: calc(#{rem(42)} + var(--space--l) + var(--site-header--logo-height));
 
         background-color: transparent;
     }
@@ -61,10 +63,11 @@ $site-header--top--background: 'white';
         grid-template-rows: min-content auto;
 
         @include mq('site-header') {
-            @include align-width--l;
+            @include align-width--m;
 
             gap: var(--site-header--spacing);
             grid-auto-flow: column;
+            grid-template-columns: var(--site-header--logo-width) auto;
             grid-template-rows: unset;
         }
     }
@@ -82,9 +85,15 @@ $site-header--top--background: 'white';
         justify-items: flex-end;
 
         @include mq('site-header') {
+            padding-top: var(--space--l);
             padding-right: 0;
             padding-left: 0;
             background-color: transparent;
+            grid-template-rows: 1fr auto;
+            grid-template-columns: 1fr;
+            grid-auto-flow: row;
+            gap: 0;
+            justify-items: flex-start;
         }
     }
 
@@ -131,6 +140,12 @@ $site-header--top--background: 'white';
             align-items: center;
             justify-content: flex-end;
             grid-auto-flow: column;
+            grid-template-columns: 1fr auto auto;
+            grid-template-rows: var(--space--l) var(--site-header--logo-height);
+            grid-row-gap: 0;
+            grid-column-gap: var(--space--s);
+            grid-template-areas: 'gap language contact'
+                                'menu menu menu';
         }
     }
 
@@ -153,12 +168,17 @@ $site-header--top--background: 'white';
         display: flex;
         width: 100%;
         height: 100%;
-        max-height: calc(100% - var(--space--xs));
 
         > * {
             object-fit: contain;
             object-position: left center;
         }
+    }
+
+    &__strapline {
+        @include typestyle-h4;
+
+        text-transform: uppercase;
     }
 
     &__widgets {
@@ -176,6 +196,13 @@ $site-header--top--background: 'white';
             padding-right: 0;
             padding-left: 0;
             margin: 0;
+            grid-area: contact;
+        }
+    }
+
+    &__language-switcher {
+        @include mq('site-header') {
+            grid-area: language;
         }
     }
 

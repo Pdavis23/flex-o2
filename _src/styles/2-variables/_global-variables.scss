@@ -58,6 +58,7 @@
 
     @include mq(large) {
         --grid--columns: 4;
+        --grid--column-gap: var(--space--l);
     }
 
     // ---------------------------------------------------

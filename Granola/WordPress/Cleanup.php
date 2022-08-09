@@ -6,7 +6,7 @@ class Cleanup
 {
     public static function init(): void
     {
-        \add_action('init', [__CLASS__,'headCleanup']);
+        \add_action('init', [__CLASS__, 'headCleanup']);
         \add_action('wp_footer', [__CLASS__, 'noEmbed']);
 
         // Prevent recent comments widget css being output.
@@ -15,7 +15,7 @@ class Cleanup
         // ---------------------------------------
         // Emoji Cleanup.
         // ---------------------------------------
-        \add_action('init', [__CLASS__,'disableEmoji']);
+        \add_action('init', [__CLASS__, 'disableEmoji']);
         \add_filter('emoji_svg_url', '__return_false');
         \add_filter('tiny_mce_plugins', [__CLASS__, 'disableEmojiTinyMCE']);
 
@@ -27,6 +27,11 @@ class Cleanup
         // ---------------------------------------
         \remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
         \remove_action('in_admin_header', 'wp_global_styles_render_svg_filters');
+
+        // ---------------------------------------
+        // Remove 'Customise' link from Admin Bar.
+        // ---------------------------------------
+        \add_action('wp_before_admin_bar_render', [__CLASS__, 'adminBarCustomiseCleanUp']);
     }
 
     /**
@@ -90,5 +95,11 @@ class Cleanup
         }
 
         return array_diff($plugins, ['wpemoji']);
+    }
+
+    public static function adminBarCustomiseCleanUp()
+    {
+        global $wp_admin_bar;
+        $wp_admin_bar->remove_menu('customize');
     }
 }

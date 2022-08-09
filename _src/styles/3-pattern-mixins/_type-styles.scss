@@ -19,9 +19,9 @@
 }
 
 @mixin heading-attributes {
-    font-family: var(--type--2--font-family);
-    font-weight: var(--type--2--font-weight);
-    line-height: var(--type--2--line-height);
+    font-family: var(--type--1--font-family);
+    font-weight: var(--type--1--font-weight--bold);
+    line-height: var(--type--1--line-height);
 
     // Make a tags that are children of headings inherit styling
     a {
@@ -71,4 +71,8 @@
     @include heading-attributes;
 
     font-size: var(----type--font-size--base);
+}
+
+@mixin typestyle-large {
+    font-size: rfs(17, 20);
 }

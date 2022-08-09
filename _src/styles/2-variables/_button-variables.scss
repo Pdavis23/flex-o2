@@ -5,7 +5,7 @@
     --button--padding-x: 1.5em;
 
     --button--border-width: var(--border-width--s);
-    --button--border-radius: 999px;
+    --button--border-radius: 0;
 
     --button--background-color: var(--color--brand-2);
     --button--border-color: var(--color--brand-2);
@@ -20,4 +20,6 @@
     // Small Button
     --button--small--padding-y: 0;
     --button--small--padding-x: 0.7em;
+
+    --button--icon-size: 1.4em;
 }

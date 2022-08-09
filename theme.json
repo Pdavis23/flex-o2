@@ -15,19 +15,44 @@
             "link": false,
             "palette": [
                 {
-                    "name": "Brand 1",
-                    "slug": "brand-1",
-                    "color": "#0047af"
+                    "name": "Teal",
+                    "slug": "teal",
+                    "color": "#367273"
                 },
                 {
-                    "name": "Brand 2",
-                    "slug": "brand-2",
-                    "color": "#f6cbda"
+                    "name": "Mulberry",
+                    "slug": "mulberry",
+                    "color": "#985a57"
                 },
                 {
-                    "name": "Brand 3",
-                    "slug": "brand-3",
-                    "color": "#f4be44"
+                    "name": "Khaki",
+                    "slug": "khaki",
+                    "color": "#9b9378"
+                },
+                {
+                    "name": "Seafoam",
+                    "slug": "seafoam",
+                    "color": "#96d5d2"
+                },
+                {
+                    "name": "Yellow",
+                    "slug": "yellow",
+                    "color": "#f3dd93"
+                },
+                {
+                    "name": "Peach",
+                    "slug": "peach",
+                    "color": "#fab49b"
+                },
+                {
+                    "name": "Sand",
+                    "slug": "sand",
+                    "color": "#f0e0ca"
+                },
+                {
+                    "name": "Grey",
+                    "slug": "grey",
+                    "color": "#424c57"
                 }
             ],
             "text": false

@@ -13,6 +13,7 @@
     color: var(--button--color);
     cursor: pointer;
     font-size: var(--button--font-size, inherit);
+    font-weight: var(--type--1--font-weight--bold, inherit);
     gap: var(--button--gap);
     line-height: inherit;
     text-align: center;
@@ -88,20 +89,18 @@
 }
 
 @mixin button--arrow {
-    --button--icon-size: 0.9em;
-
     @include button--with-icon;
 
-    @include interact {
-        &::after {
-            transform: translateX(15%);
-        }
-    }
+    position: relative;
+    font-weight: var(--type--1--font-weight--bold, inherit);
+    padding-right: calc(var(--space--s) + var(--button--icon-size));
 
     &::after {
-        mask-image: url(#{asset-path('images/icons/chevron-right.svg')});
-        transform: translateX(0);
-        transition: transition(transform);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0 auto var(--space--s);
+        mask-image: url(#{asset-path('images/icons/arrow-right.svg')});
     }
 }
 

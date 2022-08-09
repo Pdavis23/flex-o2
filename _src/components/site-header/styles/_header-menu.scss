@@ -29,6 +29,8 @@
         height: 100%;
         flex-flow: row nowrap;
         padding: 0;
+        grid-area: menu;
+        justify-content: flex-end;
     }
 
     &__menu {
@@ -74,6 +76,12 @@
 
             @include mq($until: 'site-header') {
                 @include typestyle-h3;
+            }
+
+            @include mq('site-header') {
+                @include typestyle-large;
+
+                font-weight: var(--type--1--font-weight--semi-bold)
             }
 
             &:not([href]) {

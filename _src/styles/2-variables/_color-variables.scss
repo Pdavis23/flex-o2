@@ -7,22 +7,75 @@
 
 $colors: (
     'base': (
-        'blue': (
-            'color': #0047af,
+        'teal': (
+            'color': #367273,
             'foreground': var(--color--white),
             'properties': (
                 '--link--color': var(--color--white),
                 '--link--color--hover': var(--color--white),
+                '--accent--color': var(--color--sand),
+                '--accent--color--dark': var(--color--grey),
             ),
         ),
-        'pink': (
-            'color': #f6cbda,
+        'mulberry': (
+            'color': #985a57,
+            'foreground': var(--color--white),
+            'properties': (
+                '--link--color': var(--color--white),
+                '--link--color--hover': var(--color--white),
+                '--accent--color': var(--color--peach),
+                '--accent--color--dark': var(--color--grey),
+            ),
+        ),
+        'khaki': (
+            'color': #9b9378,
+            'foreground': var(--color--black),
+            'properties': (
+                '--link--color': var(--color--black),
+                '--link--color--hover': var(--color--black),
+                '--accent--color': var(--color--teal),
+                '--accent--color--dark': var(--color--grey),
+            ),
+        ),
+        'seafoam': (
+            'color': #96d5d2,
+            'foreground': var(--color--black),
+            'properties': (
+                '--link--color': var(--color--black),
+                '--link--color--hover': var(--color--black),
+                '--accent--color': var(--color--sand),
+                '--accent--color--dark': var(--color--grey),
+            ),
         ),
         'yellow': (
-            'color': #f4be44,
+            'color': #f3dd93,
+            'foreground': var(--color--black),
+            'properties': (
+                '--link--color': var(--color--black),
+                '--link--color--hover': var(--color--black),
+                '--accent--color': var(--color--teal),
+                '--accent--color--dark': var(--color--grey),
+            ),
         ),
-        'lightblue': (
-            'color': #87d1d5,
+        'peach': (
+            'color': #fab49b,
+            'foreground': var(--color--black),
+            'properties': (
+                '--link--color': var(--color--black),
+                '--link--color--hover': var(--color--black),
+                '--accent--color': var(--color--yellow),
+                '--accent--color--dark': var(--color--grey),
+            ),
+        ),
+        'sand': (
+            'color': #f0e0ca,
+            'foreground': var(--color--black),
+            'properties': (
+                '--link--color': var(--color--black),
+                '--link--color--hover': var(--color--black),
+                '--accent--color': var(--color--teal),
+                '--accent--color--dark': var(--color--grey),
+            ),
         ),
         'red': (
             'color': #b6435d,
@@ -49,7 +102,7 @@ $colors: (
             ),
         ),
         'grey': (
-            'color': #444,
+            'color': #424c57,
             'foreground': var(--color--white),
             'properties': (
                 '--link--color': var(--color--white),
@@ -57,22 +110,22 @@ $colors: (
             ),
         ),
         'brand-1': (
-            'namedColor': 'blue',
+            'namedColor': 'teal',
         ),
         'brand-2': (
-            'namedColor': 'pink',
+            'namedColor': 'peach',
         ),
         'brand-3': (
             'namedColor': 'yellow',
         ),
         'brand-4': (
-            'namedColor': 'lightblue',
+            'namedColor': 'khaki',
         ),
         'brand-5': (
             'namedColor': 'red',
         ),
         'foreground': (
-            'namedColor': 'blue',
+            'namedColor': 'teal',
         ),
         'background': (
             'namedColor': 'white',
