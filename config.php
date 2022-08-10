@@ -13,10 +13,10 @@
 define('GRANOLA_DISABLE_POSTS_PT', false);
 define('GRANOLA_DISABLE_COMMENTS', true);
 define('GRANOLA_AJAX_REQUIRED', false);
-define('GRANOLA_REMOVE_WP_GLOBAL_STYLES', false);
+define('GRANOLA_REMOVE_WP_GLOBAL_STYLES', true);
 
 define('GRANOLA_JQUERY_REQUIRED', false);
-define('GRANOLA_JQUERY_IN_FOOTER', true);
+define('GRANOLA_JQUERY_IN_FOOTER', false);
 define('GRANOLA_REMOVE_JQUERY_MIGRATE', true);
 
 

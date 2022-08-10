@@ -29,17 +29,7 @@ $colors: (
         ),
         'khaki': (
             'color': #9b9378,
-            'foreground': var(--color--black),
-            'properties': (
-                '--link--color': var(--color--black),
-                '--link--color--hover': var(--color--black),
-                '--accent--color': var(--color--teal),
-                '--accent--color--dark': var(--color--grey),
-            ),
-        ),
-        'seafoam': (
-            'color': #96d5d2,
-            'foreground': var(--color--black),
+            'foreground': var(--color--white),
             'properties': (
                 '--link--color': var(--color--black),
                 '--link--color--hover': var(--color--black),
@@ -47,29 +37,51 @@ $colors: (
                 '--accent--color--dark': var(--color--grey),
             ),
         ),
+        'seafoam': (
+            'color': #96d5d2,
+            'foreground': var(--color--grey),
+            'properties': (
+                '--link--color': var(--color--black),
+                '--link--color--hover': var(--color--black),
+                '--accent--color': var(--color--mulberry),
+                '--accent--color--dark': var(--color--grey),
+            ),
+        ),
         'yellow': (
             'color': #f3dd93,
-            'foreground': var(--color--black),
+            'foreground': var(--color--grey),
             'properties': (
                 '--link--color': var(--color--black),
                 '--link--color--hover': var(--color--black),
                 '--accent--color': var(--color--teal),
                 '--accent--color--dark': var(--color--grey),
+                '--button--background-color': var(--color--yellow),
+                '--button--color': var(--color--grey),
+                '--button--border-color': var(--color--yellow),
+                '--button--background-color--hover': var(--color--grey),
+                '--button--border-color--hover': var(--color--grey),
+                '--button--color--hover': var(--color--yellow),
             ),
         ),
         'peach': (
             'color': #fab49b,
-            'foreground': var(--color--black),
+            'foreground': var(--color--grey),
             'properties': (
                 '--link--color': var(--color--black),
                 '--link--color--hover': var(--color--black),
                 '--accent--color': var(--color--yellow),
                 '--accent--color--dark': var(--color--grey),
+                '--button--background-color': var(--color--peach),
+                '--button--color': var(--color--grey),
+                '--button--border-color': var(--color--peach),
+                '--button--background-color--hover': var(--color--grey),
+                '--button--border-color--hover': var(--color--grey),
+                '--button--color--hover': var(--color--peach),
             ),
         ),
         'sand': (
             'color': #f0e0ca,
-            'foreground': var(--color--black),
+            'foreground': var(--color--grey),
             'properties': (
                 '--link--color': var(--color--black),
                 '--link--color--hover': var(--color--black),
@@ -87,10 +99,12 @@ $colors: (
         ),
         'white': (
             'color': #fff,
-            'foreground': var(--color--brand-1),
+            'foreground': var(--color--grey),
             'properties': (
-                '--link--color': var(--color--brand-5),
-                '--link--color--hover': var(--color--brand-5),
+                '--link--color': var(--color--teal),
+                '--link--color--hover': var(--color--teal),
+                '--accent--color': var(--color--mulberry),
+                '--accent--color--dark': var(--color--grey),
             ),
         ),
         'black': (
@@ -107,6 +121,8 @@ $colors: (
             'properties': (
                 '--link--color': var(--color--white),
                 '--link--color--hover': var(--color--white),
+                '--accent--color': var(--color--mulberry),
+                '--accent--color--dark': var(--color--yellow),
             ),
         ),
         'brand-1': (

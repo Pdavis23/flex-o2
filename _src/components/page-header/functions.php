@@ -11,7 +11,7 @@ function filterArgs(array $args): array
         'classes' => [],
         'type' => '',
         'show' => true,
-        'image-position' => 'background',
+        'image-position' => 'inset',
         'attributes' => [],
         'content' => [],
     ], $args);
@@ -147,6 +147,11 @@ function filterArgs(array $args): array
                         ),
                     ];
                 }
+
+                if ($background_color = \get_field('background_color', $object)) {
+                    $args['attributes']['style']['--page-header--background-color'] = 'var(--color--' . $background_color . ')';
+                    $args['color'] = 'has-background has-' . $background_color . '-background-color';
+                }
             }
         }
 
@@ -158,7 +163,7 @@ function filterArgs(array $args): array
     // -------------------------------------------------------------------------
     if (!empty($args['content']['image']) && is_int($args['content']['image'])) {
         if ($args['image-position'] === 'inset') {
-            $args['content']['inset-image'] = \wp_get_attachment_image($args['content']['image'], 'medium');
+            $args['content']['inset-image'] = \wp_get_attachment_image($args['content']['image'], 'granola_super');
         } else {
             $args['content']['background-image'] = \wp_get_attachment_image($args['content']['image'], 'granola_super');
         }
@@ -178,8 +183,10 @@ function filterArgs(array $args): array
         $args['classes'][] = 'has-background-image';
     }
 
-    if (!empty($args['inset-image'])) {
+    if (!empty($args['content']['inset-image'])) {
         $args['classes'][] = 'page-header--inset-image';
+    } else {
+        $args['classes'][] = 'page-header--no-image';
     }
 
     if (!empty($args['content']['back-link'])) {

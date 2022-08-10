@@ -20,6 +20,8 @@ function filterArgs(array $args): array
         $args['content']['call_to_action_1']['classes'] = [
             'g-button',
             'site-header__call-to-action-1',
+            'has-background',
+            'has-yellow-background-color',
         ];
     }
 
@@ -36,25 +38,18 @@ function filterArgs(array $args): array
         $total_languages = count($languages);
 
         if ($total_languages < 3) {
-            foreach ($languages as $language) {
+            foreach ($languages as $key => $language) {
                 // Only include if not the current language.
                 if (!$language['current_lang']) {
+                    $language_taxonomy_url = '/' . $language['slug'];
 
-                    if ($language['slug'] === 'en') {
-                        $language_taxonomy_url = '/';
-                        $args['languages'][] = [
-                            'title' => $language['name'],
-                            'url' => $language_taxonomy_url,
-                            'current' => $language['current_lang'],
-                        ];
-                    } else {
-                        $language_taxonomy_url = '/' . $language['slug'];
-                        $args['languages'][] = [
-                            'title' => $language['name'],
-                            'url' => $language_taxonomy_url,
-                            'current' => $language['current_lang'],
-                        ];
-                    }
+                    // If lang is EN then set url to root.
+                    $args['languages'][] = [
+                        'title' => $language['name'],
+                        'url' => ($language['slug'] === 'en' ? '/' : $language_taxonomy_url),
+                        'current' => $language['current_lang'],
+                        'classes' => ['has-background', 'has-peach-background-color', 'g-button'],
+                    ];
                 }
             }
         } else {
@@ -81,6 +76,12 @@ function filterArgs(array $args): array
                 }
             }
         }
+
+        // if (!empty($args['languages'])) {
+        //     foreach ($args['languages'] as $key => $language) {
+        //         $args['languages'][$key]['classes'] = ['has-background', 'has-yellow-background-color'];
+        //     }
+        // }
     }
 
     // -------------------------------------------------------------------------

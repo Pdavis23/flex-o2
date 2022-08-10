@@ -11,6 +11,8 @@ function filterArgs(array $args): array
         'el' => 'div',
         'classes' => [
             'site-main',
+            'has-background',
+            'has-white-background-color',
         ]
     ], $args);
 

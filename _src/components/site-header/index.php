@@ -56,10 +56,7 @@
                     </div>
                 <?php } else { ?>
                     <div class="site-header__language-switcher">
-                        <button class="site-header__language-switcher__button g-button">
-                            <span class="screen-reader-text">Select language, current language: <?= $args['current_language']; ?></span>
-                            <?= \Granola\Component::get('link', $args['languages'][0]); ?>
-                        </button>
+                        <?= \Granola\Component::get('link', $args['languages'][0]); ?>
                     </div>
                 <?php } ?>
             <?php } ?>

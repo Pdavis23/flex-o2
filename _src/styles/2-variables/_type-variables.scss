@@ -5,10 +5,10 @@
 $type-min-width: 320px;
 $type-max-width: 1200px;
 
-$base-font-size: 16px;
+$base-font-size: 18px;
 
 @mixin type-variables {
-    --type--font-size--base: $base-font-size;
+    --type--font-size--base: #{$base-font-size};
     --type--font-size--small: #{rfs(14, 14.5)};
 
     --type--1--font-family: 'Titillium Web', sans-serif;
@@ -35,8 +35,8 @@ $base-font-size: 16px;
     // ---------------------------------------------------
     // Links
     // ---------------------------------------------------
-    --link--color: var(--color--brand-5);
-    --link--color--hover: var(--color--brand-5);
+    --link--color: var(--color--teal);
+    --link--color--hover: var(--color--teal);
     --link--text-decoration: underline;
     --link--text-decoration--hover: underline;
 

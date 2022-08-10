@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -65,7 +65,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -87,6 +87,35 @@
             "step": 10,
             "prepend": "",
             "append": "%"
+        },
+        {
+            "key": "field_62f3548b5cfe5",
+            "label": "Background Color",
+            "name": "background_color",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "teal": "Teal",
+                "mulberry": "Mulberry",
+                "khaki": "Khaki",
+                "seafoam": "Seafoam",
+                "yellow": "Yellow",
+                "peach": "Peach",
+                "sand": "Sand",
+                "grey": "Grey"
+            },
+            "allow_null": 0,
+            "default_value": "white",
+            "layout": "horizontal",
+            "return_format": "value"
         }
     ],
     "location": [
@@ -114,5 +143,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1659441277
+    "modified": 1660115094
 }

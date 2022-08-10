@@ -1,0 +1,49 @@
+@import '../../core';
+
+.team {
+    --resellers--icon--size: #{rem(25)};
+
+    $this: &;
+
+    &__items {
+        @include grid(1, 2, 3);
+
+        padding-top: var(--space--s);
+    }
+
+    &__item {
+        &.has-background {
+            padding: var(--space--s);
+        }
+
+        &__heading {
+            margin-bottom: var(--space--xxs);
+        }
+
+        &__inner {
+            display: flex;
+            flex-flow: column;
+            gap: var(--space--s);
+
+            > * {
+                display: flex;
+                gap: var(--space--xxs);
+            }
+        }
+
+        &__icon {
+            width: var(--resellers--icon--size);
+            color: var(--accent--color);
+
+            svg {
+                stroke: currentColor;
+                fill: currentColor;
+            }
+        }
+
+        &__job_title {
+            margin-left: calc((var(--resellers--icon--size) + var(--space--xxs)) * -1);
+            font-weight: var(--type--1--font-weight--semi-bold);
+        }
+    }
+}

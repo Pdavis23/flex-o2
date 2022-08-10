@@ -53,6 +53,8 @@
     @include heading-attributes;
 
     font-size: rfs(23, 35);
+    line-height: rfs(25, 36);
+
 }
 
 @mixin typestyle-h4 {

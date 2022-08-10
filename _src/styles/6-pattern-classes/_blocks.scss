@@ -14,9 +14,11 @@
 
     // Set default width for all child elements
     > *:not(.alignwide):not(.alignfull):not(.alignright):not(.alignleft):not(.alignnone) {
+        --blocks--margin-left: calc((100vw - var(--width--m)) / 2);
         max-width: var(--block--max-width);
         margin-right: auto;
         margin-left: auto;
+        margin-left: var(--blocks--margin-left);
     }
 
     // Set up default layout spacing for blocks
