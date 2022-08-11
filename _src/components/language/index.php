@@ -1,12 +1,13 @@
-<section <?= \Granola\Helpers::buildAttributes($args['attributes']); ?>>
-    <div class="language__inner">
-        <?php if (!empty($args['label'])) { ?>
-            <div class="language__label">
-                <?= wp_kses_post($args['label']); ?>
-            </div>
-        <?php } ?>
+<?php if (!empty($args['languages'])) { ?>
 
-        <?php if (!empty($args['languages'])) { ?>
+    <section <?= \Granola\Helpers::buildAttributes($args['attributes']); ?>>
+        <div class="language__inner">
+            <?php if (!empty($args['label'])) { ?>
+                <div class="language__label">
+                    <?= wp_kses_post($args['label']); ?>
+                </div>
+            <?php } ?>
+
             <div class="language__items">
                 <?php foreach ($args['languages'] as $key => $language) { ?>
                     <div class="language__item">
@@ -16,6 +17,6 @@
                     </div>
                 <?php } ?>
             </div>
-        <?php } ?>
-    </div>
-</section>
+        </div>
+    </section>
+<?php } ?>

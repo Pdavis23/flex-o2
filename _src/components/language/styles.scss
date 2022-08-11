@@ -1,13 +1,9 @@
-// @import '../../core';
+@import '../../core';
 
-// .language {
-//     $this: &;
+.language {
+    $this: &;
 
-//     &__inner {
-//         @include align-width--l;
-//     }
-
-//     &__heading {
-//         @include typestyle-h3;
-//     }
-// }
+    &__label {
+        font-weight: var(--type--1--font-weight--semi-bold);
+    }
+}

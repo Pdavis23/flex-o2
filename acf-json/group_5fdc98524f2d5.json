@@ -69,26 +69,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_60b9012e37dd7",
-            "label": "Image Overlay Opacity",
-            "name": "image_overlay_opacity",
-            "type": "range",
-            "instructions": "An overlay is placed over the image to improve readability of the foreground text. You can change the opacity of the overlay here to account for image lightness.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "step": 10,
-            "prepend": "",
-            "append": "%"
-        },
-        {
             "key": "field_62f3548b5cfe5",
             "label": "Background Color",
             "name": "background_color",
@@ -143,5 +123,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660115094
+    "modified": 1660202554
 }
