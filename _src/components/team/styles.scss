@@ -2,6 +2,9 @@
 
 .team {
     --resellers--icon--size: #{rem(25)};
+    --team--media--ratio: 1 / 1;
+    --team--media--size: #{rem(150)};
+    --team--inner--padding: var(--space--s);
 
     $this: &;
 
@@ -12,12 +15,16 @@
     }
 
     &__item {
+        position: relative;
+
         &.has-background {
-            padding: var(--space--s);
+            padding: var(--team--inner--padding);
         }
 
         &__heading {
+            padding-right: calc(var(--team--media--size) + var(--space--xxs));
             margin-bottom: var(--space--xxs);
+            line-height: 1;
         }
 
         &__inner {
@@ -44,6 +51,36 @@
         &__job_title {
             margin-left: calc((var(--resellers--icon--size) + var(--space--xxs)) * -1);
             font-weight: var(--type--1--font-weight--semi-bold);
+        }
+
+        &__biography {
+            display: block;
+        }
+
+        &__image {
+            position: absolute;
+            top: calc((var(--team--inner--padding) + var(--space--s)) * -1);
+            right: var(--team--inner--padding);
+            width: var(--team--media--size);
+            height: var(--team--media--size);
+            aspect-ratio: var(--team--media--ratio);
+            overflow: visible;
+
+            img {
+                z-index: 1;
+            }
+
+            &::after {
+                opacity: .5;
+                position: absolute;
+                top: calc(var(--team--inner--padding) * -1);
+                left: calc(var(--team--inner--padding) * -1);
+                width: calc(var(--team--media--size)/ 2) ;
+                height: calc(var(--team--media--size) / 2);
+                z-index: 0;
+                background: var(--accent--color);
+                content: "";
+            }
         }
     }
 }

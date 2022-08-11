@@ -25,10 +25,17 @@
                             ]); ?>
                         <?php } ?>
 
+
+                        <?php if (!empty($item['content']['image'])) { ?>
+                            <div class="team__item__image img-fit">
+                                <?= \Granola\Component::get('image', ['ID' => $item['content']['image']]); ?>
+                            </div>
+                        <?php } ?>
+
                         <?php if (!empty($item['content'])) { ?>
                             <div class="team__item__inner">
                                 <?php foreach ($item['content'] as $key => $field) { ?>
-                                    <?php if (!empty($field) && $key !== 'website') { ?>
+                                    <?php if (!empty($field) && $key !== 'website' && $key !== 'image') { ?>
                                         <div class="team__item__<?= $key; ?>">
                                             <div class="team__item__icon">
                                                 <?= \Granola\SVG::get('icons/' . $key . '.svg'); ?>

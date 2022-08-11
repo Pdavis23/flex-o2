@@ -14,6 +14,7 @@ function filterArgs(array $args): array
         'image-position' => 'inset',
         'attributes' => [],
         'content' => [],
+        'post_id' => '',
     ], $args);
 
     // ---------------------------------------
@@ -79,6 +80,8 @@ function filterArgs(array $args): array
 
         if ($object instanceof \WP_Post) {
             $post_type = \get_post_type_object($object->post_type);
+            $args['post_id'] = $object->ID;
+
             // -----------------------------------------------------------------
             // Handle filtering content from WordPress posts
             // -----------------------------------------------------------------
@@ -99,6 +102,7 @@ function filterArgs(array $args): array
                 $args['content']['buttons'][] = array_merge($primary_call_to_action, [
                     'classes' => [
                         'g-button',
+                        'g-button--arrow',
                     ]
                 ]);
             }
@@ -136,6 +140,13 @@ function filterArgs(array $args): array
             } elseif ($object->post_type === 'page') {
                 if (\is_front_page()) {
                     $args['classes'][] = 'page-header--home';
+
+                    $args['content']['screen-reader-heading'] = $args['content']['heading'];
+                    $args['content']['heading'] = null;
+
+                    if ($secondary_image = \get_field('secondary_image', $object)) {
+                        $args['content']['secondary-image'] = ['ID' => $secondary_image];
+                    }
                 }
 
                 if ($parent = $object->post_parent) {

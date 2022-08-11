@@ -1,0 +1,42 @@
+@import '../../core';
+
+.divider {
+    --divider--max-width: #{rem(76)};
+
+    $this: &;
+
+    &__inner {
+        max-width: var(--divider--max-width);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    svg {
+        color: var(--divider--icon-color, currentColor);
+    }
+
+    &.wp-block {
+        --divider--max-width: var(--width--xxs);
+    }
+
+    &:not(.wp-block) {
+        // Collapse block if smaller icon.
+        height: 0;
+
+        svg {
+            transform: translatey(-100%);
+        }
+
+        &.icon--position--left {
+            #{$this}__inner {
+                margin-left: var(--space--xl);
+            }
+        }
+
+        &.icon--position--right {
+            #{$this}__inner {
+                margin-right: var(--space--xl);
+            }
+        }
+    }
+}

@@ -17,11 +17,28 @@
                 </div>
             <?php } ?>
 
+            <?php if (!empty($args['content']['secondary-image'])) { ?>
+                <div class="page-header__inset-image image-secondary">
+                    <div class="page-header__inset-image-inner img-fit">
+                        <?= \Granola\Component::get('image', $args['content']['secondary-image']); ?>
+                    </div>
+                </div>
+
+            <?php } ?>
+
             <div class="page-header__content">
                 <?php if (!empty($args['content']['heading'])) { ?>
                     <?= \Granola\Component::get('heading', [
                         'heading' => $args['content']['heading'],
                         'classes' => ['page-header__heading'],
+                        'el'      => 'h1',
+                    ]); ?>
+                <?php } ?>
+
+                <?php if (!empty($args['content']['screen-reader-heading'])) { ?>
+                    <?= \Granola\Component::get('heading', [
+                        'heading' => $args['content']['screen-reader-heading'],
+                        'classes' => ['screen-reader-text'],
                         'el'      => 'h1',
                     ]); ?>
                 <?php } ?>
@@ -67,7 +84,25 @@
                     </div>
                 <?php } ?>
             </div>
+
+            <?php if (!empty($args['content']['secondary-image'])) { ?>
+                <div class="page-header__divider">
+                    <?= \Granola\Component::get('divider', [
+                        'icon' => 'ribbon-short',
+                    ]); ?>
+                    <?= \Granola\Component::get('divider', [
+                        'icon' => 'ribbon-long',
+                        'icon_color' => 'teal',
+                    ]); ?>
+                </div>
+
+            <?php } ?>
         </div>
+
+
+        <?= \Granola\Component::get('language', [
+            'post_id' => $args['post_id'],
+        ]); ?>
 
         <?php if (!empty($args['content']['background-image'])) { ?>
             <div class="page-header__background-image">

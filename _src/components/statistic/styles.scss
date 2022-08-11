@@ -1,0 +1,54 @@
+@import '../../core';
+
+.statistic {
+    --statistic--padding: var(--space--s);
+    --statistic--icon--width: #{rem(70)};
+    --statistic--icon--height: #{rem(70)};
+
+    $this: &;
+
+    &__inner {
+        position: relative;
+        display: grid;
+        padding: var(--statistic--padding);
+        grid-template-areas: 'value icon'
+                             'label icon';
+        grid-template-columns: 1fr var(--statistic--icon--width);
+    }
+
+    &__value {
+        --heading--margin-bottom: 0;
+
+        @include typestyle-h2;
+
+        grid-area: value;
+        color: var(--accent--color);
+
+    }
+
+    &__label {
+        grid-area: label;
+        font-weight: var(--type--1--font-weight--semi-bold);
+    }
+
+    &__icon {
+        width: var(--statistic--icon--width);
+        height: var(--statistic--icon--height);
+        color: var(--accent--color);
+        grid-area: icon;
+    }
+
+    &[class^=icon--type--ribbon-],
+    &.icon--type--ribbon-long,
+    &.icon--type--ribbon-short {
+        --statistic--icon--width: #{rem(350)};
+        --statistic--icon--height: #{rem(35)};
+
+        #{$this}__icon {
+            @include mq(large) {
+                transform: translateX(calc(3 * var(--statistic--padding)));
+            }
+        }
+    }
+
+}

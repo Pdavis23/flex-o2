@@ -51,7 +51,6 @@ define('GRANOLA_MAX_IMAGE_SIZE', 3000); // Images larger than this size will be 
 define('GRANOLA_MENUS', [
     'header' => 'Header',
     'footer-1' => 'Footer 1',
-    'footer-2' => 'Footer 2',
 ]);
 
 
