@@ -83,14 +83,7 @@
             },
             "choices": {
                 "white": "White",
-                "teal": "Teal",
-                "mulberry": "Mulberry",
-                "khaki": "Khaki",
-                "seafoam": "Seafoam",
-                "yellow": "Yellow",
-                "peach": "Peach",
-                "sand": "Sand",
-                "grey": "Grey"
+                "seafoam": "Seafoam"
             },
             "allow_null": 0,
             "default_value": "white",
@@ -123,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660202554
+    "modified": 1661371737
 }

@@ -4,8 +4,8 @@
     --page-header--inset-image--aspect-ratio: 530 / 290;
     --page-header--padding-top: var(--space--responsive--m);
     --page-header--padding-bottom: var(--space--responsive--xs);
-    --page-header--heading--max-width: 17em;
-    --page-header--subheading--max-width: 18em;
+    --page-header--subheading--max-width: #{rem(500)};
+    --page-header--heading--max-width: var(--page-header--subheading--max-width);
     --page-header--align: left;
     --page-header--text-align: left;
     --page-header--grid-alignment-x: left;
@@ -187,18 +187,31 @@
 
         #{$this}__inner {
             width: 100%;
-            padding-right: var(--space--m);
-            padding-left: var(--space--xl);
-            background: var(--page-header--background-color);
 
-            &::before {
-                --page-header--subheading--max-width: 25em;
+            &.has-background {
+                padding-right: var(--space--m);
+                padding-left: var(--space--xl);
+                background: var(--page-header--background-color);
 
-                top: 35%;
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 20% 65%, 0 65%);
+                &::before {
+                    --page-header--subheading--max-width: 25em;
+
+                    top: 35%;
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 20% 65%, 0 65%);
+                }
+
             }
 
+            // &::before {
+            //     --page-header--subheading--max-width: 25em;
+
+            //     top: 35%;
+            //     clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 20% 65%, 0 65%);
+            // }
+
         }
+
+
     }
 
     &__inner {
@@ -233,7 +246,7 @@
     &--home {
         #{$this}__content {
             padding: var(--space--m);
-            background: var(--color--yellow);
+            background: var(--color--seafoam);
             text-align: center;
 
             @include mq(large) {
@@ -290,6 +303,14 @@
                 @include mq(large) {
                     --divider--max-width: #{rem(350)};
                 }
+            }
+
+            .icon--type--ribbon-short {
+                --divider--icon-color: var(--color--peach);
+            }
+
+            .icon--type--ribbon-long {
+                --divider--icon-color: var(--color--yellow);
             }
         }
 

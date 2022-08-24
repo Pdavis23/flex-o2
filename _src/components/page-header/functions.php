@@ -160,8 +160,10 @@ function filterArgs(array $args): array
                 }
 
                 if ($background_color = \get_field('background_color', $object)) {
-                    $args['attributes']['style']['--page-header--background-color'] = 'var(--color--' . $background_color . ')';
-                    $args['color'] = 'has-background has-' . $background_color . '-background-color';
+                    if ($background_color === 'seafoam') {
+                        $args['attributes']['style']['--page-header--background-color'] = 'var(--color--' . $background_color . ')';
+                        $args['color'] = 'has-background has-' . $background_color . '-background-color';
+                    }
                 }
             }
         }

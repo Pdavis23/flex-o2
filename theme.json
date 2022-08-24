@@ -15,39 +15,9 @@
             "link": false,
             "palette": [
                 {
-                    "name": "Teal",
-                    "slug": "teal",
-                    "color": "#367273"
-                },
-                {
-                    "name": "Mulberry",
-                    "slug": "mulberry",
-                    "color": "#985a57"
-                },
-                {
-                    "name": "Khaki",
-                    "slug": "khaki",
-                    "color": "#9b9378"
-                },
-                {
                     "name": "Seafoam",
                     "slug": "seafoam",
                     "color": "#96d5d2"
-                },
-                {
-                    "name": "Yellow",
-                    "slug": "yellow",
-                    "color": "#f3dd93"
-                },
-                {
-                    "name": "Peach",
-                    "slug": "peach",
-                    "color": "#fab49b"
-                },
-                {
-                    "name": "Sand",
-                    "slug": "sand",
-                    "color": "#f0e0ca"
                 },
                 {
                     "name": "Grey",

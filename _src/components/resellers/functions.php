@@ -20,25 +20,7 @@ function filterArgs(array $args): array
         'wp-block',
     ], $args['classes']);
 
-    $colors = [
-        'white',
-        'teal',
-        'mulberry',
-        'khaki',
-        'seafoam',
-        'yellow',
-        'peach',
-        'sand',
-        'grey',
-    ];
 
-    if (!empty($args['resellers'])) {
-        foreach ($args['resellers'] as $key => $reseller) {
-            if (empty($reseller['background_color'])) {
-                $args['resellers'][$key]['background_color'] = $colors[rand(0, 8)];
-            }
-        }
-    }
 
     // -------------------------------------------------------------------------
     // Return the filtered args.

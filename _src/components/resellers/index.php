@@ -16,7 +16,7 @@
         <?php if (!empty($args['resellers'])) { ?>
             <div class="resellers__items">
                 <?php foreach ($args['resellers'] as $key => $item) { ?>
-                    <div class="resellers__item has-background has-<?= $item['background_color']; ?>-background-color">
+                    <div class="resellers__item has-background has-sand-background-color">
                         <?php if (!empty($item['name'])) { ?>
                             <?= \Granola\Component::get('heading', [
                                 'heading' => $item['name'],

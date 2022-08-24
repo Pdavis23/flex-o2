@@ -2,6 +2,12 @@
     --link--color: var(--color--foreground);
     --link--color--hover: var(--color--foreground);
     --site-footer__images--aspect-ratio: 28 / 13;
+    --site-footer--logo-width: #{rem(120)};
+
+
+    @include mq(large) {
+        --site-footer--logo-width: #{rem(388)};
+    }
 
     $this: &;
     $footer-breakpoint--small: 400px;
@@ -18,15 +24,19 @@
     }
 
     &__logo {
+        max-width: var(--site-footer--logo-width);
 
         a {
             display: inline-block;
             width: 100%;
             aspect-ratio: 388 / 74;
 
+            > svg path {
+                fill: var(--color--foreground);
+            }
 
             .pill {
-                fill: var(--color--grey);
+                fill: var(--color--seafoam);
             }
 
             .pill-gap {

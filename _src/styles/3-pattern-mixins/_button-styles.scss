@@ -98,7 +98,9 @@
     &::after {
         position: absolute;
         top: 0;
-        right: calc(var(--space--xs) * -1);
+        // right: calc(var(--space--xs) * -1);
+        // right: calc(var(--space--xs) * -1);
+        right: var(--space--xxs);
         bottom: 0;
         margin: auto 0 auto var(--space--s);
         mask-image: url(#{asset-path('images/icons/arrow-right.svg')});
@@ -107,8 +109,7 @@
 
     @include interact {
         &::after {
-            background: var(--accent--color);
-            transform: translateX(10px);
+            transform: translateX(calc(var(--space--s)));
             transition: transform var(--transition--duration);
         }
     }

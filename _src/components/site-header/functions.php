@@ -21,7 +21,7 @@ function filterArgs(array $args): array
             'g-button',
             'site-header__call-to-action-1',
             'has-background',
-            'has-yellow-background-color',
+            'has-teal-background-color',
         ];
     }
 
@@ -48,7 +48,7 @@ function filterArgs(array $args): array
                         'title' => $language['name'],
                         'url' => ($language['slug'] === 'en' ? '/' : $language_taxonomy_url),
                         'current' => $language['current_lang'],
-                        'classes' => ['has-background', 'has-peach-background-color', 'g-button'],
+                        'classes' => ['has-background', 'has-teal-background-color', 'g-button'],
                     ];
                 }
             }

@@ -152,6 +152,14 @@ class ACF
             ]),
         ];
 
+
+        // Define 'Bold' toolbar.
+        $toolbars['Heading'] = [
+            1 => \apply_filters('granola/acf/fields/wysiwyg/toolbars/basic', [
+                'bold',
+            ]),
+        ];
+
         return $toolbars;
     }
 }

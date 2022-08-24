@@ -11,7 +11,7 @@ function filterArgs(array $args): array
         'classes' => [
             'site-footer',
         ],
-        'background_color' => 'seafoam',
+        'background_color' => 'grey',
     ], $args);
 
     if (have_rows('footer_images', 'option')) {

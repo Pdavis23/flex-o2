@@ -14,7 +14,7 @@
     --submenu--dropdown--max-width: #{rem(400)};
     --submenu--dropdown--min-width: #{rem(275)};
 
-    $submenu-color: 'brand-2';
+    $submenu-color: 'sand';
 
     align-self: center;
     padding: 0 var(--space--container-padding);
@@ -39,7 +39,7 @@
         display: grid;
         justify-content: center;
         gap: var(--menu-item--gap);
-        text-align: center;
+        text-align: left;
 
         @include mq('site-header') {
             position: static;
@@ -196,6 +196,7 @@
             @include mq('site-header') {
                 position: absolute;
                 top: calc(100% + var(--submenu--arrow-height));
+                top: 100%;
                 left: 50%;
                 display: block;
                 min-width: var(--submenu--dropdown--min-width);

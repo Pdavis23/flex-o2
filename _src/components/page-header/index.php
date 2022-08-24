@@ -92,17 +92,11 @@
                     ]); ?>
                     <?= \Granola\Component::get('divider', [
                         'icon' => 'ribbon-long',
-                        'icon_color' => 'teal',
                     ]); ?>
                 </div>
 
             <?php } ?>
         </div>
-
-
-        <?= \Granola\Component::get('language', [
-            'post_id' => $args['post_id'],
-        ]); ?>
 
         <?php if (!empty($args['content']['background-image'])) { ?>
             <div class="page-header__background-image">

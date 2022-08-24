@@ -93,8 +93,6 @@
     }
 
     &.has-background {
-        --button--border-color: var(--color--foreground);
-
         #{$this}__inner {
             padding-top: var(--block--padding-y);
             padding-bottom: var(--block--padding-y);
