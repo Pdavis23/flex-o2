@@ -4,19 +4,19 @@
 
 @mixin form-variables {
     --input--background-color: hsl(
-        var(--color--brand-2--h),
-        var(--color--brand-2--s),
-        98%
+        var(--color--seafoam--h),
+        var(--color--seafoam--s),
+        95%
     );
     --input--background-color--focus: var(--color--background);
     --input--background-color--highlight: hsl(
-        var(--color--brand-2--h),
-        var(--color--brand-2--s),
+        var(--color--seafoam--h),
+        var(--color--seafoam--s),
         90%
     );
     --input--border-width: 1px;
     --input--border-color: currentColor;
-    --input--border-radius: 1.6875em;
+    --input--border-radius: 0;
     --input--color: inherit;
     --input--color--focus: var(--input--border-color);
     --input--outline-color--focus: var(--input--border-color);
@@ -27,7 +27,7 @@
     --input--padding: var(--input--padding-y) var(--input--padding-x);
     --input--placeholder-color: hsla(var(--color--brand-1--hsl), 0.8);
 
-    --form--label-spacing: var(--space--xs);
+    --form--label-spacing: var(--space--xxxs);
 
     --form--textarea-height: 100px;
 

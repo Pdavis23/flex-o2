@@ -1,0 +1,82 @@
+{
+    "key": "group_6307d378a9ed6",
+    "title": "Block - Form",
+    "fields": [
+        {
+            "key": "field_6307d3815d9c9",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6307d3875d9ca",
+            "label": "Subheading",
+            "name": "subheading",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic_formatting",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_6307d3925d9cb",
+            "label": "Form ID",
+            "name": "form_id",
+            "type": "text",
+            "instructions": "You can find the Form ID by visiting the <a href=\"\/wp-admin\/admin.php?page=html-forms\">forms page<\/a> and copying the quoted text in the shortcode column. \r\n<br>For instance you'll if the form shortcode is <i>[hf_form slug=\"contact\"]<\/i>, enter <i>contact<\/i> here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/form"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1661457410
+}

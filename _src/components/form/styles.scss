@@ -1,0 +1,27 @@
+@import '../../core';
+
+.form {
+    $this: &;
+
+
+    &__inner {
+        max-width: var(--blocks--max-width);
+
+    }
+
+    &__heading {
+        @include typestyle-h3;
+    }
+
+    &__field {
+        max-width: var(--block--max-width);
+    }
+
+    &__submit {
+        max-width: var(--block--max-width);
+    }
+
+    label {
+        font-weight: var(--type--1--font-weight--semi-bold);
+    }
+}
