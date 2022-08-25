@@ -19,6 +19,10 @@
     align-self: center;
     padding: 0 var(--space--container-padding);
 
+    @include mq($until: 'site-header') {
+        order: -1;
+    }
+
     @include mq('site-header') {
         --menu-item--gap: var(--space--m);
         --submenu-item--gap: var(--space--xs);
@@ -40,6 +44,13 @@
         justify-content: center;
         gap: var(--menu-item--gap);
         text-align: left;
+
+        @include mq($until: 'site-header') {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+        }
 
         @include mq('site-header') {
             position: static;

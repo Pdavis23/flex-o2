@@ -18,7 +18,10 @@
         max-width: var(--block--max-width);
         margin-right: auto;
         margin-left: auto;
-        margin-left: var(--blocks--margin-left);
+
+        @include mq(xlarge) {
+            margin-left: var(--blocks--margin-left);
+        }
     }
 
     // Set up default layout spacing for blocks

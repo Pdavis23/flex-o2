@@ -8,13 +8,13 @@ $site-header--top--background: 'white';
 }
 
 .site-header {
-    --site-header--height: #{rem(70)};
+    --site-header--height: #{rem(120)};
     --site-header--logo-width: #{rem(120)};
     --site-header--logo-height: #{rem(52)};
     --site-header--menu--duration: 250ms;
     --site-header--menu--ease: ease-in-out;
 
-    --site-header--spacing: var(--space--m);
+    --site-header--spacing: var(--space--xs);
 
     --link--color: var(--color--foreground);
     --link--color--hover: var(--color--foreground);
@@ -27,14 +27,11 @@ $site-header--top--background: 'white';
     background-color: var(--color--#{$site-header--bottom--background});
     transition: height var(--site-header--menu--duration) var(--site-header--menu--duration);
 
-    @include mq(small) {
-        --site-header--spacing: var(--space--m);
-    }
-
     @include mq('site-header') {
         --site-header--logo-width: #{rem(388)};
         --site-header--logo-height: #{rem(72)};
         --site-header--height: calc(#{rem(42)} + var(--space--l) + var(--site-header--logo-height));
+        --site-header--spacing: var(--space--m);
 
         background-color: transparent;
     }
@@ -81,8 +78,16 @@ $site-header--top--background: 'white';
         background-color: var(--color--#{$site-header--top--background});
         gap: var(--site-header--spacing);
         grid-auto-flow: column;
-        grid-template-columns: minmax(min-content, var(--site-header--logo-width)) auto;
+        // grid-template-columns: minmax(min-content, var(--site-header--logo-width)) auto;
         justify-items: flex-end;
+
+        @include mq($until: 'site-header') {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 'logo burger'
+                                 'strapline gap';
+            row-gap: var(--space--xxxs);
+            padding-top: var(--space--xxs);
+        }
 
         @include mq('site-header') {
             padding-top: var(--space--l);
@@ -121,6 +126,11 @@ $site-header--top--background: 'white';
             pointer-events: none;
             transition: all var(--site-header--menu--duration) var(--site-header--menu--ease);
             visibility: hidden;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: var(--space--l);
 
             .site-header.is-open & {
                 opacity: 1;
@@ -153,17 +163,21 @@ $site-header--top--background: 'white';
     }
 
     &__burger {
-        --burger--color: var(--color--brand-1);
-        --burger--background-color: var(--color--brand-2);
-        --burger--border-color: var(--color--brand-2);
-        --burger--color--hover: var(--color--brand-2);
-        --burger--background-color--hover: var(--color--brand-1);
-        --burger--border-color--hover: var(--color--brand-1);
+        --burger--color: var(--color--white);
+        --burger--background-color: var(--color--teal);
+        --burger--border-color: var(--color--teal);
+        --burger--color--hover: var(--color--teal);
+        --burger--background-color--hover: var(--color--seafoam);
+        --burger--border-color--hover: var(--color--seafoam);
 
         margin-right: calc(var(--burger--padding) * -0.5);
 
         @include mq('site-header') {
             display: none;
+        }
+
+        @include mq($until: 'site-header') {
+            grid-area: burger;
         }
     }
 
@@ -172,16 +186,26 @@ $site-header--top--background: 'white';
         width: 100%;
         height: 100%;
 
+        @include mq($until: 'site-header') {
+            grid-area: logo;
+        }
+
         > * {
             object-fit: contain;
             object-position: left center;
         }
+
     }
 
     &__strapline {
         @include typestyle-h4;
 
         text-transform: uppercase;
+
+        @include mq($until: 'site-header') {
+            grid-area: strapline;
+            justify-self: flex-start;
+        }
     }
 
     &__widgets {
@@ -190,6 +214,13 @@ $site-header--top--background: 'white';
         padding-right: var(--space--container-padding);
         padding-left: var(--space--container-padding);
         margin-top: auto;
+
+        @include mq($until: 'site-header') {
+            a {
+                --button--background-color: var(--color--seafoam);
+                --button--border-color: var(--color--seafoam);
+            }
+        }
 
         @include mq('site-header') {
             display: flex;

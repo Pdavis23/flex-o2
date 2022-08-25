@@ -184,6 +184,10 @@
     &--no-image {
         padding-top: var(--space--l);
 
+        @include mq($until: 'site-header') {
+            padding-bottom: var(--space--l);
+        }
+
         #{$this}__inner {
             width: 100%;
 
@@ -247,6 +251,13 @@
                 grid-row: 2;
                 margin-top: -45%;
             }
+
+            @include mq($until: large) {
+                order: 2;
+                z-index: 1;
+                width: calc(100% - var(--space--l));
+                margin: auto;
+            }
         }
 
         #{$this}__inner {
@@ -270,6 +281,14 @@
                 grid-row: 1;
                 transform: translateY(var(--space--xl));
             }
+
+            @include mq($until: large) {
+                order: 1;
+                width: 60%;
+                margin-left: 0;
+                margin-right: auto;
+                margin-bottom: calc(var(--space--base) * -1);
+            }
         }
 
         #{$this}__inset-image.image-secondary {
@@ -278,6 +297,14 @@
 
                 grid-column: 3 / 5;
                 grid-row: 1;
+            }
+
+            @include mq($until: large) {
+                order: 3;
+                width: 60%;
+                margin-top: calc(var(--space--base) * -1);
+                // margin-left: 0;
+                // margin-right: auto;
             }
         }
 
@@ -289,6 +316,11 @@
             @include mq(large) {
                 grid-column: 1 / 5;
                 grid-row: 3;
+            }
+
+            @include mq($until: large) {
+                order: 4;
+                grid-template-columns: 1fr 1fr;
             }
 
             .wp-block {
