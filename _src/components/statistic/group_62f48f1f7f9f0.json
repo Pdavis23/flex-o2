@@ -25,7 +25,7 @@
             "key": "field_62f48f57e8eb1",
             "label": "Statistic Label",
             "name": "statistic_label",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -35,10 +35,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "tabs": "all",
+            "toolbar": "basic_formatting",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_62f48f63e8eb2",
@@ -85,5 +85,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660194785
+    "modified": 1661460764
 }
