@@ -98,6 +98,9 @@ $site-header--top--background: 'white';
     }
 
     &__bottom {
+        --button--padding-y: 0.3em;
+        --button--padding-x: 1em;
+
         display: grid;
         justify-content: center;
         gap: var(--site-header--spacing);
@@ -213,6 +216,48 @@ $site-header--top--background: 'white';
         @include mq('site-header') {
             padding-right: 0;
             padding-left: 0;
+        }
+    }
+
+    &__language-switcher {
+        position: relative;
+
+        &__button {
+            --button--background-color: var(--color--seafoam);
+            --button--border-color: var(--color--seafoam);
+            --button--color: var(--color--grey);
+            --button--background-color--hover: var(--color--teal);
+            --button--border-color--hover: var(--color--teal);
+            --button--color--hover: var(--color--white);
+        }
+
+        &__inner {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            z-index: 2;
+            box-shadow: var(--box-shadow--1);
+        }
+
+        &__items {
+            @include list-reset-hard;
+
+            text-align: center;
+
+            &.has-background {
+                padding: var(--space--s);
+            }
+        }
+
+        &__item {
+            --link--text-decoration: none;
+
+            margin-bottom: var(--space--xs);
+
+            &.is-active {
+                font-weight: var(--type--1--font-weight--semi-bold);
+            }
         }
     }
 }

@@ -42,15 +42,10 @@
                 "id": ""
             },
             "choices": {
-                "white": "White",
-                "teal": "Teal",
                 "mulberry": "Mulberry",
                 "khaki": "Khaki",
-                "seafoam": "Seafoam",
                 "yellow": "Yellow",
-                "peach": "Peach",
-                "sand": "Sand",
-                "grey": "Grey"
+                "peach": "Peach"
             },
             "allow_null": 0,
             "default_value": "",
@@ -94,6 +89,25 @@
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
+        },
+        {
+            "key": "field_630733be94aad",
+            "label": "Translucent",
+            "name": "icon_translucent",
+            "type": "true_false",
+            "instructions": "Make the icon translucent to allow it to site behind text without making text difficult to read.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -114,5 +128,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660196328
+    "modified": 1661416431
 }

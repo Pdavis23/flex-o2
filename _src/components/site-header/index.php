@@ -38,27 +38,21 @@
             <?php } ?>
 
             <?php if (!empty($args['languages'])) { ?>
-                <?php if (count($args['languages']) > 3) { ?>
-                    <div class="site-header__language-switcher reveal">
-                        <button class="site-header__language-switcher__button js-reveal-item">
-                            <span class="screen-reader-text">Select language, current language: <?= $args['current_language']; ?></span>
-                            <span class="label"><?= $args['current_language']; ?></span>
-                        </button>
-                        <div class="site-header__language-switcher__inner  reveal__content">
-                            <ul class="site-header__language-switcher__items">
-                                <?php foreach ($args['languages'] as $key => $language) { ?>
-                                    <li class="site-header__language-switcher__item <?= ($language['current'] ? 'is-active' : null) ?>">
-                                        <?= \Granola\Component::get('link', $language); ?>
-                                    </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
+                <div class="site-header__language-switcher reveal">
+                    <button class="site-header__language-switcher__button js-reveal-item g-button">
+                        <span class="screen-reader-text">Current language: <?= $args['current_language']; ?></span>
+                        <span class="label"><?= $args['languages_button']; ?></span>
+                    </button>
+                    <div class="site-header__language-switcher__inner  reveal__content">
+                        <ul class="site-header__language-switcher__items has-background has-seafoam-background-color">
+                            <?php foreach ($args['languages'] as $key => $language) { ?>
+                                <li class="site-header__language-switcher__item <?= ($language['current'] ? 'is-active' : null) ?>">
+                                    <?= \Granola\Component::get('link', $language); ?>
+                                </li>
+                            <?php } ?>
+                        </ul>
                     </div>
-                <?php } else { ?>
-                    <div class="site-header__language-switcher">
-                        <?= \Granola\Component::get('link', $args['languages'][0]); ?>
-                    </div>
-                <?php } ?>
+                </div>
             <?php } ?>
 
             <?php if (has_nav_menu('header')) { ?>

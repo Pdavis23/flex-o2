@@ -72,3 +72,4 @@ require_once 'config.php';
 // ----------------------------------------------------
 \Theme\Plugins\ACF::init();
 \Theme\Plugins\YoastSEO::init();
+\Theme\Plugins\Polylang::init();

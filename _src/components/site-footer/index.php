@@ -24,11 +24,14 @@
         <div class="site-footer__bottom">
             <div class="site-footer__menu site-footer__menu-1">
                 <?php if (has_nav_menu('footer-1')) : ?>
-                    <?= \Granola\Component::get('heading', [
-                        'heading' => __('Key information', 'granola'),
-                        'classes' => ['site-footer__bottom__heading'],
-                        'el' => 'h5',
-                    ]); ?>
+                    <?php if ($menu_heading = get_field('footer_text_menu', 'option')) { ?>
+                        <?= \Granola\Component::get('heading', [
+                            'heading' => $menu_heading,
+                            'classes' => ['site-footer__bottom__heading'],
+                            'el' => 'h5',
+                        ]); ?>
+                    <?php } ?>
+
                     <?php wp_nav_menu(array(
                         'theme_location' => 'footer-1',
                         'depth' => 1,
@@ -37,14 +40,17 @@
                 <?php endif; ?>
             </div>
             <div class="site-footer__bottom__inner">
-                <?= \Granola\Component::get('heading', [
-                    'heading' => __('Contact', 'granola'),
-                    'classes' => ['site-footer__bottom__heading'],
-                    'el' => 'h5',
-                ]); ?>
-                <?php if ($bottom_text = get_field('site_email_address', 'option')) { ?>
+                <?php if ($contact_heading = get_field('footer_text_contact', 'option')) { ?>
+                    <?= \Granola\Component::get('heading', [
+                        'heading' => $contact_heading,
+                        'classes' => ['site-footer__bottom__heading'],
+                        'el' => 'h5',
+                    ]); ?>
+                <?php } ?>
+
+                <?php if ($email_text = get_field('site_email_address', 'option')) { ?>
                     <div class="site-footer__bottom-text">
-                        <?= wp_kses_post($bottom_text); ?>
+                        <?= wp_kses_post($email_text); ?>
                     </div>
                 <?php } ?>
             </div>

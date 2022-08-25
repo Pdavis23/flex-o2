@@ -41,6 +41,7 @@
     @include heading-attributes;
 
     font-size: rfs(28, 55);
+    line-height: 1.2;
 }
 
 @mixin typestyle-h2 {

@@ -193,25 +193,12 @@
                 padding-left: var(--space--xl);
                 background: var(--page-header--background-color);
 
-                &::before {
-                    --page-header--subheading--max-width: 25em;
-
-                    top: 35%;
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 20% 65%, 0 65%);
+                &::before,
+                &::after {
+                    content: none;
                 }
-
             }
-
-            // &::before {
-            //     --page-header--subheading--max-width: 25em;
-
-            //     top: 35%;
-            //     clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 20% 65%, 0 65%);
-            // }
-
         }
-
-
     }
 
     &__inner {
@@ -244,6 +231,8 @@
     }
 
     &--home {
+        --page-header--padding-bottom: var(--space--xs);
+
         #{$this}__content {
             padding: var(--space--m);
             background: var(--color--seafoam);

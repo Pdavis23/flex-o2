@@ -31,6 +31,10 @@ function filterArgs(array $args): array
         $args['classes'][] = 'icon--position--' . $args['icon_position'];
     }
 
+    if ($args['icon_translucent']) {
+        $args['classes'][] = 'icon--translucent';
+    }
+
 
     if (!empty($args['icon_color'])) {
         $args['attributes']['style']['--divider--icon-color'] = 'var(--color--' . $args['icon_color'] . ')';

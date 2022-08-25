@@ -63,5 +63,9 @@
 
     &__content {
         max-width: calc(100% - var(--benefits--icon--size) - var(--benefits--gap));
+
+        &-inner {
+            @include no-first-last-margin;
+        }
     }
 }

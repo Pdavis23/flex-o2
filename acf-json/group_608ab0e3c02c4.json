@@ -20,6 +20,44 @@
             "toolbar": "basic_formatting",
             "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_63072af03cdf6",
+            "label": "Footer Text - Menu",
+            "name": "footer_text_menu",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63072afd3cdf7",
+            "label": "Footer Text - Contact",
+            "name": "footer_text_contact",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -40,5 +78,5 @@
     "active": true,
     "description": "Options Page",
     "show_in_rest": 0,
-    "modified": 1660197400
+    "modified": 1661414150
 }

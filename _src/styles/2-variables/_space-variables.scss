@@ -34,7 +34,7 @@
     @include mq(small) {
         --space--container-padding: #{rem(30)};
 
-        --space--layout: var(--space--xxl);
+        --space--layout: var(--space--xl);
 
         --space--responsive--xxs: var(--space--xxs);
         --space--responsive--xs: var(--space--xs);
