@@ -16,7 +16,7 @@
         <?php if (!empty($args['team'])) { ?>
             <div class="team__items">
                 <?php foreach ($args['team'] as $key => $item) { ?>
-                    <div class="team__item has-background has-<?= $item['background_color']; ?>-background-color">
+                    <div class="team__item has-background has-sand-background-color">
                         <?php if (!empty($item['name'])) { ?>
                             <?= \Granola\Component::get('heading', [
                                 'heading' => $item['name'],
@@ -41,7 +41,16 @@
                                                 <?= \Granola\SVG::get('icons/' . $key . '.svg'); ?>
                                             </div>
                                             <div class="team__item__value">
-                                                <?= wp_kses_post($field); ?>
+                                                <?php if ($key === 'linkedin') { ?>
+                                                    <?= \Granola\Component::get('link', [
+                                                        'url' => wp_kses_post($field),
+                                                        'title' => 'LinkedIn',
+                                                        'target' => '_blank',
+                                                    ]); ?>
+                                                <?php } else { ?>
+                                                    <?= wp_kses_post($field); ?>
+                                                <?php } ?>
+
                                             </div>
                                         </div>
                                     <?php } ?>

@@ -79,35 +79,6 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_62f42cccc7894",
-                    "label": "Background Color",
-                    "name": "background_color",
-                    "type": "button_group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "white": "White",
-                        "teal": "Teal",
-                        "mulberry": "Mulberry",
-                        "khaki": "Khaki",
-                        "seafoam": "Seafoam",
-                        "yellow": "Yellow",
-                        "peach": "Peach",
-                        "sand": "Sand",
-                        "grey": "Grey"
-                    },
-                    "allow_null": 0,
-                    "default_value": "",
-                    "layout": "horizontal",
-                    "return_format": "value"
-                },
-                {
                     "key": "field_62f42cccc789d",
                     "label": "Content",
                     "name": "",
@@ -218,6 +189,22 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_6307e22c2a475",
+                            "label": "LinkedIn",
+                            "name": "linkedin",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
                         }
                     ]
                 }
@@ -242,5 +229,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660190844
+    "modified": 1661461197
 }
