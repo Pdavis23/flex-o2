@@ -94,6 +94,7 @@
     position: relative;
     font-weight: var(--type--1--font-weight--bold, inherit);
     padding-right: calc(var(--space--s) + var(--button--icon-size));
+    text-align: left;
 
     &::after {
         position: absolute;
