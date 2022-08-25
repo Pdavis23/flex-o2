@@ -79,7 +79,7 @@
         text-align: left;
 
         &__inner {
-            @include align-width--l;
+            @include align-width--m;
         }
 
         a {
@@ -187,16 +187,20 @@
         #{$this}__inner {
             width: 100%;
 
+            &::before,
+            &::after {
+                content: none;
+            }
+
             &.has-background {
                 padding-right: var(--space--m);
                 padding-left: var(--space--xl);
                 background: var(--page-header--background-color);
-
-                &::before,
-                &::after {
-                    content: none;
-                }
             }
+        }
+
+        :not(.has-background) {
+            --page-header--padding-bottom: 0;
         }
     }
 

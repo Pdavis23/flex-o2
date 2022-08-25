@@ -88,10 +88,10 @@ function filterArgs(array $args): array
 
             if (!in_array($object->post_type, ['page', 'granola-template'])) {
                 // Add a 'back to' link to the post type archive by default
-                $args['content']['back-link'] = [
-                    'url' => \get_post_type_archive_link($object->post_type),
-                    'title' => sprintf(__('Back to %s', 'granola'), $post_type->labels->name),
-                ];
+                // $args['content']['back-link'] = [
+                //     'url' => \get_post_type_archive_link($object->post_type),
+                //     'title' => sprintf(__('Back to %s', 'granola'), $post_type->labels->name),
+                // ];
             }
 
             $args['content']['heading'] = $object->post_title;
@@ -121,21 +121,16 @@ function filterArgs(array $args): array
                     \get_the_date(\get_option('date_format'), $object->ID)
                 );
 
-                $args['content']['labels'] = \Theme\Meta\ObjectMeta::getObjectLabels($object->ID, [
-                    'limit' => 3,
-                    'taxonomies' => ['category']
-                ]);
-
                 $args['background'] = false;
                 $args['image-position'] = 'inset';
 
                 $args['type'] = 'article';
 
-                if ($author_name = \get_the_author_meta('display_name', $object->post_author)) {
-                    $args['content']['meta'] .= sprintf(
-                        __('by %s ', 'granola'),
-                        $author_name
-                    );
+                if ($background_color = \get_field('background_color', $object)) {
+                    if ($background_color === 'seafoam') {
+                        $args['attributes']['style']['--page-header--background-color'] = 'var(--color--' . $background_color . ')';
+                        $args['color'] = 'has-background has-' . $background_color . '-background-color';
+                    }
                 }
             } elseif ($object->post_type === 'page') {
                 if (\is_front_page()) {

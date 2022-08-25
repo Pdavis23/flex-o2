@@ -105,6 +105,13 @@
                 "operator": "==",
                 "value": "granola-template"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
         ]
     ],
     "menu_order": 0,
@@ -116,5 +123,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661371737
+    "modified": 1661418748
 }
