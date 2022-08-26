@@ -11,9 +11,13 @@
         position: relative;
         display: grid;
         padding: var(--statistic--padding);
-        grid-template-areas: 'value icon'
-                             'label icon';
-        grid-template-columns: 1fr var(--statistic--icon--width);
+        grid-template-columns: 1fr;
+
+        @include mq(large) {
+            grid-template-areas: 'value icon'
+            'label icon';
+            grid-template-columns: 1fr var(--statistic--icon--width);
+        }
     }
 
     &__value {
@@ -21,21 +25,30 @@
 
         @include typestyle-h2;
 
-        grid-area: value;
         color: var(--accent--color);
+
+        @include mq(large) {
+            grid-area: value;
+        }
 
     }
 
     &__label {
-        grid-area: label;
         font-weight: var(--type--1--font-weight--semi-bold);
+
+        @include mq(large) {
+            grid-area: label;
+        }
     }
 
     &__icon {
-        width: var(--statistic--icon--width);
         height: var(--statistic--icon--height);
         color: var(--accent--color);
-        grid-area: icon;
+
+        @include mq(large) {
+            grid-area: icon;
+            width: var(--statistic--icon--width);
+        }
     }
 
     &[class^=icon--type--ribbon-],

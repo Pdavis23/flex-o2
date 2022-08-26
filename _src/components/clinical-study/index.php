@@ -7,7 +7,11 @@
                 'content_filter' => false,
                 'target' => '_blank',
                 'attributes' => [
-                    'aria-label' => __('Download Case Study: ' . $args['heading'], 'granola'),
+                    // 'aria-label' => pll__('Download Case Study: ' . $args['heading']),
+                    'aria-label' => sprintf(
+                        pll__('Download Case Study: %s'),
+                        $args['heading']
+                    ),
                 ],
             ]); ?>
 

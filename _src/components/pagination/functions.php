@@ -16,9 +16,9 @@ function filterArgs(array $args): array
     ], $args);
 
     $args['output'] = get_the_posts_pagination([
-        'prev_text' => __('Previous page', 'granola'),
-        'next_text' => __('Next page', 'granola'),
-        'before_page_number' => '<span class="screen-reader-text">' . __('Page', 'granola') . ' </span>',
+        'prev_text' => pll__('Previous page'),
+        'next_text' => pll__('Next page'),
+        'before_page_number' => '<span class="screen-reader-text">' . pll__('Page') . ' </span>',
         'class' => 'pagination__inner',
     ]);
 

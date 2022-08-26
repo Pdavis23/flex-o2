@@ -6,9 +6,9 @@
 
 namespace Theme\PostTypes;
 
-class Event
+class CaseStudy
 {
-    protected const SLUG = 'event';
+    protected const SLUG = 'case-study';
 
     public static function init(): void
     {
@@ -35,8 +35,8 @@ class Event
             'hierarchical' => false,
             'show_in_rest' => true,
             'menu_position' => 25, // Below comments.
-            'menu_icon' => 'dashicons-calendar',
-            'enter_title_here' => 'Event Name',
+            'menu_icon' => 'dashicons-pdf',
+            'enter_title_here' => 'Case Study Title',
             'supports' => [
                 'title',
                 'editor',
@@ -45,9 +45,6 @@ class Event
                 'thumbnail',
                 'author',
                 'custom-fields',
-            ],
-            'taxonomies' => [
-                'location',
             ],
             'template' => [
                 [
@@ -59,26 +56,13 @@ class Event
             ],
 
             // Extended post type configuration.
-            'admin_filters' => [
-                'location' => [
-                    'taxonomy' => 'location',
-                ],
-            ],
+            'admin_filters' => [],
             'admin_cols' => [
-                'thumbnail' => [
-                    'title'          => 'Thumbnail',
-                    'featured_image' => 'thumbnail',
-                    'width'          => 80,
-                    'height'         => 80,
-                ],
                 'title' => [
                     'title' => 'Title',
                 ],
                 'author' => [
                     'title' => 'Author',
-                ],
-                'location' => [
-                    'taxonomy' => 'location',
                 ],
                 'updated' => [
                     'title'      => 'Updated',
@@ -88,9 +72,9 @@ class Event
             ],
         ], [
             // Override the base names used for labels (optional).
-            'singular' => __('Event', 'granola'),
-            'plural'   => __('Events', 'granola'),
-            'slug'     => self::SLUG,
+            'singular' => __('Case Study', 'granola'),
+            'plural'   => __('Case Studies', 'granola'),
+            'slug'     => 'case-studies',
         ]);
     }
 
@@ -104,9 +88,9 @@ class Event
         }
 
         \acf_add_options_sub_page([
-            'page_title'  => __('Events Settings', 'granola'),
-            'menu_title'  => __('Events Settings', 'granola'),
-            'menu_slug'   => 'acf-options-events-settings',
+            'page_title'  => __('Case Study Settings', 'granola'),
+            'menu_title'  => __('Case Study Settings', 'granola'),
+            'menu_slug'   => 'acf-options-case-study-settings',
             'parent_slug' => 'edit.php?post_type=' . self::SLUG,
         ]);
     }

@@ -10,8 +10,7 @@
     --page-header--text-align: left;
     --page-header--grid-alignment-x: left;
     --page-header--overlay-opacity: 20%;
-    --page-header--padding-top: var(--space--xl);
-    --page-header--padding-bottom: var(--space--xl);
+
     --page-header--box-width: #{rem(200)};
     --page-header--box-height: #{rem(250)};
 
@@ -30,6 +29,8 @@
 
     @include mq(large) {
         --page-header--inset-image--size: #{rem(150)};
+        --page-header--padding-top: var(--space--xl);
+        --page-header--padding-bottom: var(--space--xl);
     }
 
     &.has-background {
@@ -215,12 +216,22 @@
             @include typestyle-h4;
 
             position: absolute;
-            top: 50%;
-            left: calc(var(--page-header--subheading--max-width) + var(--space--m));
+            top: #{rem(10)};
+            left: #{rem(-10)};
             width: var(--page-header--box-width);
             height: var(--page-header--box-height);
             background: var(--accent--color);
             content: '';
+
+            @include mq($until: large) {
+                --page-header--box-height: 200px;
+                --page-header--box-width: 100px;
+            }
+
+            @include mq(large) {
+                top: 50%;
+                left: calc(var(--page-header--subheading--max-width) + var(--space--m));
+            }
         }
 
         &::after {
@@ -234,11 +245,24 @@
             background: var(--accent--color);
             opacity: 0.5;
             content: '';
+
+            @include mq($until: large) {
+                content: none;
+            }
         }
     }
 
     &--home {
         --page-header--padding-bottom: var(--space--xs);
+
+        @include mq($until: medium) {
+            --page-header--inset-image--aspect-ratio: 1 / 1;
+            --page-header--home--image--offeset: calc(var(--space--base) * -4);
+        }
+
+        #{$this}__subheading {
+            margin-top: 0;
+        }
 
         #{$this}__content {
             padding: var(--space--m);
@@ -284,10 +308,10 @@
 
             @include mq($until: large) {
                 order: 1;
-                width: 60%;
+                // width: 60%;
                 margin-left: 0;
                 margin-right: auto;
-                margin-bottom: calc(var(--space--base) * -1);
+                margin-bottom: var(--page-header--home--image--offeset);
             }
         }
 
@@ -301,8 +325,8 @@
 
             @include mq($until: large) {
                 order: 3;
-                width: 60%;
-                margin-top: calc(var(--space--base) * -1);
+                // width: 60%;
+                margin-top: var(--page-header--home--image--offeset);
                 // margin-left: 0;
                 // margin-right: auto;
             }

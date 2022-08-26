@@ -17,7 +17,7 @@ acf_register_block_type([
     'title' =>  'Team', // Label in block editor.
     // 'description' => '', // A short description.
     'category' => 'granola-blocks', // Core: common | formatting | layout | widgets | embed.
-    'icon' => 'layout', // https://developer.wordpress.org/resource/dashicons/
+    'icon' => 'admin-users', // https://developer.wordpress.org/resource/dashicons/
 
     // Optional keywords to help users search for the block
     // 'keywords' => [

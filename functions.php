@@ -58,7 +58,7 @@ require_once 'config.php';
 // ----------------------------------------------------
 // Custom Post Types.
 // ----------------------------------------------------
-// \Theme\PostTypes\Event::init();
+\Theme\PostTypes\CaseStudy::init();
 \Theme\PostTypes\Post::init();
 
 // ----------------------------------------------------

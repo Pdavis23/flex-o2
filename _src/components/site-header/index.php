@@ -23,7 +23,7 @@
                     'js-site-header-toggle',
                 ],
                 'attributes' => [
-                    'aria-label' => __('Main menu button', 'granola'),
+                    'aria-label' => pll__('Main menu button'),
                     'aria-controls' => 'main-menu',
                     'aria-expanded' => 'false',
                 ]

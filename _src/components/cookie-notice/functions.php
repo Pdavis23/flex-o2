@@ -11,10 +11,10 @@ function filterArgs(array $args): array
         'classes' => [],
         'attributes' => [],
         'content' => '',
-        'accept_button_text' => __('Accept', 'granola'),
-        'accept_button_text_additional_context' => __('site cookies', 'granola'),
-        'reject_button_text' => __('Reject', 'granola'),
-        'reject_button_text_additional_context' => __('site cookies', 'granola'),
+        'accept_button_text' => pll__('Accept'),
+        'accept_button_text_additional_context' => pll__('site cookies'),
+        'reject_button_text' => pll__('Reject'),
+        'reject_button_text_additional_context' => pll__('site cookies'),
     ], $args);
 
     // ---------------------------------------
@@ -63,7 +63,7 @@ function filterArgs(array $args): array
         $args['content'] = $content;
     } elseif (!empty(get_privacy_policy_url())) {
         $args['content'] = sprintf(
-            __('We use cookies. Read more about them in our %s', 'granola'),
+            pll__('We use cookies. Read more about them in our %s'),
             \Granola\Component::get('link', [
                 'content' => _x('Privacy Policy', 'Cookie notice link text', 'granola'),
                 'url'     => get_privacy_policy_url(),

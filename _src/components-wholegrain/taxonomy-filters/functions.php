@@ -10,7 +10,7 @@ function filterArgs(array $args): array
     $args = array_merge([
         'classes' => [],
         'current_item' => 0,
-        'label' => __('Filter by', 'granola'),
+        'label' => pll__('Filter by'),
     ], $args);
 
     // ---------------------------------------
@@ -37,7 +37,7 @@ function filterArgs(array $args): array
         $tax = get_taxonomy($args['taxonomy']);
 
         $args['label'] = sprintf(
-            __('Filter by %s', 'granola'),
+            pll__('Filter by %s'),
             strtolower($tax->labels->singular_name)
         );
 

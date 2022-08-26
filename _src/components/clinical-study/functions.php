@@ -21,7 +21,7 @@ function filterArgs(array $args): array
 
     if (!empty($args['file'])) {
         $args['button'] = [
-            'title' => __('Download', 'granola'),
+            'title' => pll__('Download'),
             'url' => $args['file']['url'],
             'classes' => ['g-button'],
             'target' => '_blank',

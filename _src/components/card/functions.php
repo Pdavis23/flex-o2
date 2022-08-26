@@ -71,12 +71,6 @@ function filterArgs(array $args): array
                 $metaAuthor = \Theme\Meta\ObjectMeta::getObjectAuthor($object);
 
                 $args['content']['meta'] .= $metaDate ?? null;
-                $args['content']['meta'] .= $metaDate && $metaAuthor ? ' ' : null;
-
-                if (!empty($metaAuthor)) {
-                    $metaAuthor = \Granola\Component::get('link', $metaAuthor);
-                    $args['content']['meta'] .= sprintf(__('by %s', 'granola'), $metaAuthor);
-                }
             }
         } elseif ($args['object'] instanceof \WP_Term) {
             // ------------------------------------------
@@ -100,7 +94,7 @@ function filterArgs(array $args): array
         }
 
         if (empty($args['content']['read_more']['title'])) {
-            $args['content']['read_more']['title'] = __('Read more', 'granola');
+            $args['content']['read_more']['title'] = pll__('Read more');
         }
     } elseif (!empty($args['content'])) {
         $content = $args['content'];

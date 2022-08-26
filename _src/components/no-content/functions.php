@@ -10,7 +10,7 @@ function filterArgs(array $args): array
     $args = array_merge([
         'classes' => [],
         'content' => [
-            'message' => __('No content found.', 'granola'),
+            'message' => pll__('No content found.'),
         ],
     ], $args);
 

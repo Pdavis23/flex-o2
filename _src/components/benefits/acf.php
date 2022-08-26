@@ -17,7 +17,7 @@ acf_register_block_type([
     'title' =>  'Benefits', // Label in block editor.
     'description' => 'A benefits block', // A short description.
     'category' => 'granola-blocks', // Core: common | formatting | layout | widgets | embed.
-    'icon' => 'schedule', // https://developer.wordpress.org/resource/dashicons/
+    'icon' => 'image-filter', // https://developer.wordpress.org/resource/dashicons/
 
     // Optional keywords to help users search for the block
     // 'keywords' => [

@@ -38,7 +38,7 @@ function filterArgs(array $args): array
 
                 $args['content']['back-link'] = [
                     'url' => \get_post_type_archive_link('post'),
-                    'title' => sprintf(__('Back to %s', 'granola'), $post_type->labels->name),
+                    'title' => sprintf(pll__('Back to %s'), $post_type->labels->name),
                 ];
             }
         } elseif ($object instanceof \WP_Post_Type) {
@@ -117,7 +117,7 @@ function filterArgs(array $args): array
 
             if ($object->post_type === 'post') {
                 $args['content']['meta'] = sprintf(
-                    __('Published on %s ', 'granola'),
+                    pll__('Published on %s '),
                     \get_the_date(\get_option('date_format'), $object->ID)
                 );
 
@@ -125,6 +125,23 @@ function filterArgs(array $args): array
                 $args['image-position'] = 'inset';
 
                 $args['type'] = 'article';
+
+                if ($background_color = \get_field('background_color', $object)) {
+                    if ($background_color === 'seafoam') {
+                        $args['attributes']['style']['--page-header--background-color'] = 'var(--color--' . $background_color . ')';
+                        $args['color'] = 'has-background has-' . $background_color . '-background-color';
+                    }
+                }
+            } elseif ($object->post_type === 'case-study') {
+                $args['content']['meta'] = sprintf(
+                    pll__('Published on %s '),
+                    \get_the_date(\get_option('date_format'), $object->ID)
+                );
+
+                $args['background'] = false;
+                $args['image-position'] = 'inset';
+
+                $args['type'] = 'case-study';
 
                 if ($background_color = \get_field('background_color', $object)) {
                     if ($background_color === 'seafoam') {
@@ -148,7 +165,7 @@ function filterArgs(array $args): array
                     $args['content']['back-link'] = [
                         'url' => \get_permalink($parent),
                         'title' => sprintf(
-                            __('Back to %s', 'granola'),
+                            pll__('Back to %s'),
                             \get_the_title($parent)
                         ),
                     ];
