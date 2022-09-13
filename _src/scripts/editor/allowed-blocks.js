@@ -47,7 +47,7 @@ const allowedCoreBlocks = [
     // 'core/tag-cloud',
     'core/text-columns',
     // 'core/verse',
-    // 'core/video',
+    'core/video',
     // 'core/site-logo',
     // 'core/site-tagline',
     // 'core/site-title',
