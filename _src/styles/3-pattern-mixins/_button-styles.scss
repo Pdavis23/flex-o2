@@ -93,8 +93,12 @@
 
     position: relative;
     font-weight: var(--type--1--font-weight--bold, inherit);
-    padding-right: calc(var(--space--s) + var(--button--icon-size));
+    padding-right: calc(var(--space--xs) + var(--button--icon-size));
     text-align: left;
+
+    @include mq(large) {
+        padding-right: calc(var(--space--s) + var(--button--icon-size));
+    }
 
     &::after {
         position: absolute;

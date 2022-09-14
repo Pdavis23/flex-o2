@@ -183,10 +183,11 @@
     }
 
     &--no-image {
-        padding-top: var(--space--l);
+        padding-top: var(--space--m);
 
-        @include mq($until: 'site-header') {
-            padding-bottom: var(--space--l);
+        @include mq('site-header') {
+            padding-top: var(--space--l);
+
         }
 
         #{$this}__inner {
@@ -198,9 +199,13 @@
             }
 
             &.has-background {
-                padding-right: var(--space--m);
-                padding-left: var(--space--xl);
+                padding: var(--space--s) var(--space--s) var(--space--l) var(--space--s);
                 background: var(--page-header--background-color);
+
+                @include mq('site-header') {
+                    padding-right: var(--space--m);
+                    padding-left: var(--space--xl);
+                }
             }
         }
 

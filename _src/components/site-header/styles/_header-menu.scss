@@ -184,6 +184,8 @@
 
         a {
             @include mq($until: 'site-header') {
+                --link--text-decoration: underline;
+
                 @include typestyle-h4;
             }
         }

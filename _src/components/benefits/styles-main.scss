@@ -34,6 +34,12 @@
 
     &__item {
         display: flex;
+        flex-flow: column;
+
+        @include mq(medium) {
+            flex-flow: row;
+
+        }
     }
 
     &__icon {
@@ -43,6 +49,10 @@
         height: var(--benefits--icon--size);
         border-radius: 50%;
         margin-right: var(--benefits--gap);
+
+        @include mq($until: medium) {
+            margin-bottom: var(--space--s);
+        }
 
         &::before {
             position: absolute;
@@ -62,7 +72,9 @@
     }
 
     &__content {
-        max-width: calc(100% - var(--benefits--icon--size) - var(--benefits--gap));
+        @include mq(medium) {
+            max-width: calc(100% - var(--benefits--icon--size) - var(--benefits--gap));
+        }
 
         &-inner {
             @include no-first-last-margin;

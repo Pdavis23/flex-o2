@@ -50,7 +50,7 @@
 
                 <?php if ($email_text = get_field('site_email_address', 'option')) { ?>
                     <div class="site-footer__bottom-text">
-                        <?= wp_kses_post($email_text); ?>
+                        <a href="mailto:<?= wp_kses_post($email_text); ?>"><?= wp_kses_post($email_text); ?></a>
                     </div>
                 <?php } ?>
             </div>

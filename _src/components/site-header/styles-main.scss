@@ -204,7 +204,7 @@ $site-header--top--background: 'white';
 
         @include mq($until: 'site-header') {
             grid-area: strapline;
-            justify-self: flex-start;
+            justify-self: center;
         }
     }
 
