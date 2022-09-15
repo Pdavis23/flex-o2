@@ -11,7 +11,7 @@
     &__items {
         @include grid(1, 2, 3);
 
-        padding-top: calc(var(--space--xl) + var(--space--s));
+        padding-top: var(--space--s);
     }
 
     &__item {
