@@ -186,8 +186,10 @@
         padding-top: var(--space--m);
 
         @include mq('site-header') {
-            padding-top: var(--space--l);
+            --page-header--subheading--max-width: #{rem(650)};
+            --page-header--heading--max-width: var(--page-header--subheading--max-width);
 
+            padding-top: var(--space--l);
         }
 
         #{$this}__inner {
