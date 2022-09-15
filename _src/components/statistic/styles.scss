@@ -10,7 +10,7 @@
     &__inner {
         position: relative;
         display: grid;
-        padding: var(--statistic--padding);
+        padding: var(--statistic--padding) var(--block--padding-x);
         grid-template-columns: 1fr;
 
         @include mq(large) {

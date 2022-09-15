@@ -3,13 +3,40 @@
     "title": "Cookies",
     "fields": [
         {
+            "key": "field_6322f679c8900",
+            "label": "Show Cookie Notice",
+            "name": "show_cookie_notice",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5fb5243b58c0d",
             "label": "Cookie Notice Text",
             "name": "cookie_notice_text",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6322f679c8900",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -40,5 +67,5 @@
     "active": true,
     "description": "Options Page",
     "show_in_rest": 0,
-    "modified": 1658263535
+    "modified": 1663235733
 }
