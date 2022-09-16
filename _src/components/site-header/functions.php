@@ -29,7 +29,7 @@ function filterArgs(array $args): array
     // -------------------------------------------------------------------------
     // Language Switcher
     // -------------------------------------------------------------------------
-    if ($show_language_switcher = get_field('show_language_switcher', 'option')) {
+    if (get_field('show_language_switcher', 'options')) {
         if (function_exists('pll_the_languages')) {
             $languages = \pll_the_languages([
                 'raw' => 1,

@@ -8,9 +8,14 @@ namespace Theme\Plugins;
 
 class Polylang
 {
+    public static $filtered = false;
+
     public static function init(): void
     {
         add_action('init', [__CLASS__, 'translateStrings']);
+        // Need to force ACF to show fields set to homepage on the homepage of other languages.
+        // Guide from here: https://support.advancedcustomfields.com/forums/topic/polylang-location-front-page/
+        add_filter('acf/location/rule_match/page_type', [__CLASS__, 'hookPageOnFront']);
     }
 
     public static function translateStrings(): void
@@ -34,5 +39,26 @@ class Polylang
             \pll_register_string('Filter by', 'Filter by', 'FlexO2');
             \pll_register_string('Filter by %s', 'Filter by %s', 'FlexO2');
         }
+    }
+
+    public static function hookPageOnFront($match)
+    {
+        if (!self::$filtered) {
+            add_filter('option_page_on_front', [__CLASS__, 'translatePageOnBack']);
+            // Prevent second hooking
+            self::$filtered = true;
+        }
+
+        return $match;
+    }
+
+    public static function translatePageOnBack($value)
+    {
+
+        if (function_exists('pll_get_post')) {
+            $value = \pll_get_post($value);
+        }
+
+        return $value;
     }
 }
