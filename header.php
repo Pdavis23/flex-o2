@@ -14,6 +14,18 @@ $siteManifest = json_decode(\Granola\Asset::content('static/site.webmanifest'), 
 
     <?php wp_head(); ?>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJVFEBNQEG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JJVFEBNQEG');
+</script>
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
