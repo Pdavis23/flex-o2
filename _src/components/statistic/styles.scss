@@ -20,7 +20,7 @@
 
         @include mq(large) {
             grid-template-areas: 'value icon'
-            'label icon';
+                'label icon';
             grid-template-columns: 1fr var(--statistic--icon--width);
         }
     }
@@ -51,8 +51,8 @@
         color: var(--accent--color);
 
         @include mq(large) {
-            grid-area: icon;
             width: var(--statistic--icon--width);
+            grid-area: icon;
         }
     }
 
@@ -68,5 +68,4 @@
             }
         }
     }
-
 }

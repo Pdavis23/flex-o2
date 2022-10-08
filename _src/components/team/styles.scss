@@ -47,8 +47,8 @@
             color: var(--accent--color);
 
             svg {
-                stroke: currentColor;
                 fill: currentColor;
+                stroke: currentColor;
             }
         }
 
@@ -63,23 +63,23 @@
         }
 
         &__image {
-            aspect-ratio: var(--team--media--ratio);
             overflow: visible;
+            aspect-ratio: var(--team--media--ratio);
 
             img {
                 z-index: 1;
             }
 
             &::after {
-                opacity: .5;
                 position: absolute;
+                z-index: 0;
                 top: calc(var(--team--inner--padding) * -1);
                 left: calc(var(--team--inner--padding) * -1);
-                width: calc(var(--team--media--size)/ 2) ;
+                width: calc(var(--team--media--size)/ 2);
                 height: calc(var(--team--media--size) / 2);
-                z-index: 0;
                 background: var(--accent--color);
-                content: "";
+                content: '';
+                opacity: 0.5;
             }
         }
     }

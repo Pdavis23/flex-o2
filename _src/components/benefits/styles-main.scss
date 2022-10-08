@@ -44,12 +44,12 @@
 
     &__icon {
         position: relative;
-        overflow: hidden;
         display: flex;
+        overflow: hidden;
         width: var(--benefits--icon--size);
         height: var(--benefits--icon--size);
-        border-radius: 50%;
         margin-right: var(--benefits--gap);
+        border-radius: 50%;
 
         @include mq($until: medium) {
             margin-bottom: var(--space--s);

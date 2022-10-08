@@ -82,11 +82,11 @@ $site-header--top--background: 'white';
         justify-items: flex-end;
 
         @include mq($until: 'site-header') {
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas: 'logo burger'
-                                 'strapline gap';
-            row-gap: var(--space--xxxs);
             padding-top: var(--space--xxs);
+            grid-template-areas: 'logo burger'
+                'strapline gap';
+            grid-template-columns: 1fr 1fr;
+            row-gap: var(--space--xxxs);
         }
 
         @include mq('site-header') {
@@ -94,10 +94,10 @@ $site-header--top--background: 'white';
             padding-right: 0;
             padding-left: 0;
             background-color: transparent;
-            grid-template-rows: 1fr auto;
-            grid-template-columns: 1fr;
-            grid-auto-flow: row;
             gap: 0;
+            grid-auto-flow: row;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
             justify-items: flex-start;
         }
     }
@@ -118,19 +118,19 @@ $site-header--top--background: 'white';
 
             @include color-context($site-header--bottom--background);
 
+            display: flex;
             overflow: auto;
             width: 100%;
+            flex-flow: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: var(--space--l);
             background: transparent;
             grid-auto-flow: row;
             opacity: 0;
             pointer-events: none;
             transition: all var(--site-header--menu--duration) var(--site-header--menu--ease);
             visibility: hidden;
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: var(--space--l);
 
             .site-header.is-open & {
                 opacity: 1;
@@ -153,12 +153,12 @@ $site-header--top--background: 'white';
             align-items: center;
             justify-content: flex-end;
             grid-auto-flow: column;
+            grid-column-gap: var(--space--s);
+            grid-row-gap: 0;
+            grid-template-areas: 'gap language contact'
+                'menu menu menu';
             grid-template-columns: 1fr auto auto;
             grid-template-rows: var(--space--l) var(--site-header--logo-height);
-            grid-row-gap: 0;
-            grid-column-gap: var(--space--s);
-            grid-template-areas: 'gap language contact'
-                                'menu menu menu';
         }
     }
 
@@ -264,10 +264,10 @@ $site-header--top--background: 'white';
 
         &__inner {
             position: absolute;
+            z-index: 2;
             top: 100%;
             right: 0;
             left: 0;
-            z-index: 2;
             box-shadow: var(--box-shadow--1);
         }
 

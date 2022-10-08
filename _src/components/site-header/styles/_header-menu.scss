@@ -32,9 +32,9 @@
         display: flex;
         height: 100%;
         flex-flow: row nowrap;
+        justify-content: flex-end;
         padding: 0;
         grid-area: menu;
-        justify-content: flex-end;
     }
 
     &__menu {
@@ -46,10 +46,10 @@
         text-align: left;
 
         @include mq($until: 'site-header') {
-            text-align: center;
-            width: 100%;
             display: flex;
+            width: 100%;
             flex-flow: column;
+            text-align: center;
         }
 
         @include mq('site-header') {
@@ -92,7 +92,7 @@
             @include mq('site-header') {
                 @include typestyle-large;
 
-                font-weight: var(--type--1--font-weight--semi-bold)
+                font-weight: var(--type--1--font-weight--semi-bold);
             }
 
             &:not([href]) {

@@ -70,10 +70,10 @@
 
             #{$this}__items {
                 @for $i from 1 through 5 {
-                 > :nth-child(#{$i}) {
-                      padding-left: calc(($i - 1) * var(--space--m));
+                    > :nth-child(#{$i}) {
+                        padding-left: calc(($i - 1) * var(--space--m));
                     }
-                  }
+                }
             }
         }
         #{$this}__item__link {

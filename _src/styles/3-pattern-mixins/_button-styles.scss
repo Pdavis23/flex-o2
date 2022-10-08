@@ -92,12 +92,19 @@
     @include button--with-icon;
 
     position: relative;
-    font-weight: var(--type--1--font-weight--bold, inherit);
     padding-right: calc(var(--space--xs) + var(--button--icon-size));
+    font-weight: var(--type--1--font-weight--bold, inherit);
     text-align: left;
 
     @include mq(large) {
         padding-right: calc(var(--space--s) + var(--button--icon-size));
+    }
+
+    @include interact {
+        &::after {
+            transform: translateX(calc(var(--space--s)));
+            transition: transform var(--transition--duration);
+        }
     }
 
     &::after {
@@ -110,13 +117,6 @@
         margin: auto 0 auto var(--space--s);
         mask-image: url(#{asset-path('images/icons/arrow-right.svg')});
         transition: transform var(--transition--duration);
-    }
-
-    @include interact {
-        &::after {
-            transform: translateX(calc(var(--space--s)));
-            transition: transform var(--transition--duration);
-        }
     }
 }
 

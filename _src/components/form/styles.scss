@@ -3,10 +3,8 @@
 .form {
     $this: &;
 
-
     &__inner {
         max-width: var(--blocks--max-width);
-
     }
 
     &__heading {
@@ -23,5 +21,12 @@
 
     label {
         font-weight: var(--type--1--font-weight--semi-bold);
+    }
+
+    .hf-message {
+        &-success {
+            padding: var(--space--s);
+            background-color: var(--color--seafoam);
+        }
     }
 }

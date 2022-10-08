@@ -6,6 +6,7 @@
     --block--margin-bottom: var(--space--responsive--m);
     --block--max-width: var(--width--responsive--xs);
     --block--icon--size: #{rem(70)};
+
     @include no-first-last-margin;
     @include mask-icon();
 
@@ -37,19 +38,19 @@
         width: 100%;
         height: 100%;
         background-color: var(--accent--color);
-        opacity: 0.5;
-        inset: 0;
         content: '';
+        inset: 0;
+        opacity: 0.5;
     }
 
     &::after {
         position: absolute;
         z-index: 3;
-        mask-image: url(#{asset-path('images/icons/quote.svg')});
         top: var(--blockquote--padding);
         right: var(--blockquote--padding);
         width: var(--block--icon--size);
         height: var(--block--icon--size);
         background: var(--accent--color);
+        mask-image: url(#{asset-path('images/icons/quote.svg')});
     }
 }
