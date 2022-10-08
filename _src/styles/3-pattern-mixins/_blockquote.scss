@@ -1,6 +1,6 @@
 @mixin blockquote {
     --blockquote--border-width: var(--border-width--s);
-    --blockquote--padding: 0;
+    --blockquote--padding: var(--space--s);
     --blockquote--border-offset: 0.5em;
     --block--margin-top: var(--space--responsive--m);
     --block--margin-bottom: var(--space--responsive--m);
@@ -11,12 +11,12 @@
     @include mask-icon();
 
     position: relative;
-    padding: var(--blockquote--padding);
     padding-right: calc(var(--blockquote--padding) + var(--block--icon--size));
     border: 0;
 
     &.has-background {
-        --blockquote--padding: var(--space--s);
+        padding: var(--blockquote--padding);
+        padding-right: calc(var(--blockquote--padding) + var(--block--icon--size));
     }
 
     > :not(cite):not(.wp-block-quote__citation) {
