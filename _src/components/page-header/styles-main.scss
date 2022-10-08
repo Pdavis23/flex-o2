@@ -126,10 +126,7 @@
             }
 
             &::after {
-                left: calc(var(--page-header--subheading--max-width) + var(--page-header--box-width) - var(--space--m));
-                height: var(--space--l);
-                opacity: 1;
-                background: var(--color--white);
+                content: none;
             }
         }
     }
@@ -236,7 +233,7 @@
             }
 
             @include mq(large) {
-                top: 50%;
+                top: 40%;
                 left: calc(var(--page-header--subheading--max-width) + var(--space--m));
             }
         }

@@ -120,6 +120,30 @@
                     "default_value": "",
                     "layout": "horizontal",
                     "return_format": "value"
+                },
+                {
+                    "key": "field_63412453f3ff4",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "lung": "Lung",
+                        "shield": "Shield",
+                        "mask": "Mask",
+                        "dial": "Dial"
+                    },
+                    "allow_null": 1,
+                    "default_value": "",
+                    "layout": "horizontal",
+                    "return_format": "value"
                 }
             ]
         }
@@ -142,5 +166,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661373117
+    "modified": 1665213616
 }

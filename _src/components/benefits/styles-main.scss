@@ -45,6 +45,7 @@
     &__icon {
         position: relative;
         overflow: hidden;
+        display: flex;
         width: var(--benefits--icon--size);
         height: var(--benefits--icon--size);
         border-radius: 50%;
@@ -54,17 +55,29 @@
             margin-bottom: var(--space--s);
         }
 
-        &::before {
-            position: absolute;
+        // Override the has-background global.
+        &.has-background {
+            --color--background: var(--accent--color);
+        }
+
+        svg {
+            --benefits--icon--size: #{rem(70)};
+
             width: var(--benefits--icon--size);
             height: var(--benefits--icon--size);
-            background: var(--accent--color);
-            inset: 0;
-            content: '';
-            transform-origin: center;
-            transform: rotate(45deg);
-            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+            margin: auto;
         }
+        // &::before {
+        //     position: absolute;
+        //     width: var(--benefits--icon--size);
+        //     height: var(--benefits--icon--size);
+        //     background: var(--accent--color);
+        //     inset: 0;
+        //     content: '';
+        //     transform-origin: center;
+        //     transform: rotate(45deg);
+        //     clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        // }
     }
 
     &__link {

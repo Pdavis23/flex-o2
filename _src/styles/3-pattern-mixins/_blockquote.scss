@@ -1,12 +1,11 @@
 @mixin blockquote {
     --blockquote--border-width: var(--border-width--s);
-    --blockquote--padding: var(--space--s);
+    --blockquote--padding: 0;
     --blockquote--border-offset: 0.5em;
     --block--margin-top: var(--space--responsive--m);
     --block--margin-bottom: var(--space--responsive--m);
     --block--max-width: var(--width--responsive--xs);
     --block--icon--size: #{rem(70)};
-
     @include no-first-last-margin;
     @include mask-icon();
 
@@ -15,8 +14,14 @@
     padding-right: calc(var(--blockquote--padding) + var(--block--icon--size));
     border: 0;
 
+    &.has-background {
+        --blockquote--padding: var(--space--s);
+    }
+
     > :not(cite):not(.wp-block-quote__citation) {
         @include typestyle-h3;
+
+        font-weight: var(--type--1--font-weight);
     }
 
     > * {
@@ -25,6 +30,8 @@
     }
 
     &::before {
+        --accent--color: var(--color--white);
+
         position: absolute;
         z-index: 1;
         width: 100%;

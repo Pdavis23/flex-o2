@@ -20,11 +20,11 @@ acf_register_block_type([
     'icon' => 'media-document', // https://developer.wordpress.org/resource/dashicons/
 
     // Optional keywords to help users search for the block
-    // 'keywords' => [
-    //     'quote',
-    //     'mention',
-    //     'cite',
-    // ],
+    'keywords' => [
+        'download',
+        'document',
+        'file',
+    ],
 
     // The post types that can use this block.
     // 'post_types' => [

@@ -43,4 +43,16 @@
     &.icon--translucent {
         opacity: 0.5;
     }
+
+    &.icon--type--corner-2 {
+        svg {
+            transform: rotate(90deg);
+        }
+
+        &:not(.wp-block) {
+            svg {
+                transform: rotate(90deg) translatex(-100%);
+            }
+        }
+    }
 }

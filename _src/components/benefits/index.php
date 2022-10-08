@@ -22,7 +22,11 @@
             <div class="benefits__items">
                 <?php foreach ($args['items'] as $key => $item) { ?>
                     <div class="benefits__item">
-                        <div class="benefits__icon has-background has-<?= $item['color']; ?>-background-color"></div>
+                        <div class="benefits__icon has-background has-<?= $item['color']; ?>-background-color">
+                            <?php if (!empty($item['icon'])) { ?>
+                                <?= \Granola\SVG::get('icons/' . $item['icon'] . '.svg'); ?>
+                            <?php } ?>
+                        </div>
                         <div class="benefits__content">
                             <?php if (!empty($item['content'])) { ?>
                                 <div class="benefits__content-inner">

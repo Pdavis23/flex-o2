@@ -59,7 +59,9 @@
                 "ribbon-long": "Ribbon Long",
                 "ribbon-short": "Ribbon Short",
                 "tick": "Tick",
-                "quote": "Quote"
+                "arc": "Arc",
+                "dots-4": "4 Dots",
+                "corner-2": "Right angles"
             },
             "allow_null": 1,
             "default_value": "",
@@ -85,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661460764
+    "modified": 1665213270
 }

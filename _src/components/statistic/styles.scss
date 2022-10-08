@@ -7,10 +7,15 @@
 
     $this: &;
 
+    &.has-background {
+        #{$this}__inner {
+            padding: var(--statistic--padding) var(--block--padding-x);
+        }
+    }
+
     &__inner {
         position: relative;
         display: grid;
-        padding: var(--statistic--padding) var(--block--padding-x);
         grid-template-columns: 1fr;
 
         @include mq(large) {

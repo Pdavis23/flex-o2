@@ -42,7 +42,7 @@ acf_register_block_type([
         // 'align_text' => true,
         // 'align_content' => 'matrix',
         'color' => [
-            // 'background' => false,
+            'background' => false,
             'text' => false,
             'gradients' => false
             // 'link' => false,

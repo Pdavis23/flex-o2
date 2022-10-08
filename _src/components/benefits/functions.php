@@ -29,7 +29,7 @@ function filterArgs(array $args): array
         }
     }
 
-
+    $args['background_color'] = 'sand';
 
     // -------------------------------------------------------------------------
     // Return the filtered args.
