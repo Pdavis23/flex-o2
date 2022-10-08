@@ -114,7 +114,7 @@
                             "key": "field_62f423588ab5a",
                             "label": "Address",
                             "name": "address",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -125,9 +125,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
                         },
                         {
                             "key": "field_62f4232c8ab59",
@@ -224,5 +224,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661373083
+    "modified": 1665210940
 }

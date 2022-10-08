@@ -19,6 +19,7 @@
         &__heading {
             &::after {
                 right: 0;
+                margin-top: 0;
             }
         }
 
@@ -44,8 +45,17 @@
         }
 
         &__country {
-            // padding-left: calc(var(--resellers--icon--size) + var(--space--xxs));
             margin-top: calc(var(--space--s) * -1);
+        }
+
+        &__address {
+            #{$this}__item__value {
+                @include no-first-last-margin;
+
+                p {
+                    margin: 0;
+                }
+            }
         }
     }
 }

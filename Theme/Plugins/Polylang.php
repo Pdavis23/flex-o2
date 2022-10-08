@@ -38,6 +38,7 @@ class Polylang
             \pll_register_string('Skip to content', 'Skip to content', 'FlexO2 - accessibility text');
             \pll_register_string('Filter by', 'Filter by', 'FlexO2');
             \pll_register_string('Filter by %s', 'Filter by %s', 'FlexO2');
+            \pll_register_string('Website', 'Website', 'FlexO2');
         }
     }
 
