@@ -13,19 +13,21 @@ $siteManifest = json_decode(\Granola\Asset::content('static/site.webmanifest'), 
     <meta name="theme-color" content="<?= esc_attr($siteManifest['theme_color']); ?>" />
 
     <?php wp_head(); ?>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJVFEBNQEG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JJVFEBNQEG');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJVFEBNQEG"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'G-JJVFEBNQEG');
-</script>
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
