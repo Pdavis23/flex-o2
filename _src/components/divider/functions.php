@@ -10,6 +10,7 @@ function filterArgs(array $args): array
     $args = array_merge([
         'classes' => [],
         'attributes' => [],
+        'icon_translucent' => false,
     ], $args);
 
     // ---------------------------------------
