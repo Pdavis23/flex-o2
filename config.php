@@ -97,6 +97,13 @@ define('GRANOLA_PRELOAD_ASSETS', [
         'as' => 'font',
         'crossorigin' => 'anonymous',
     ],
+    [
+        'href' => \Granola\Asset::URL('static/TitilliumWeb-SemiBold.ttf'),
+        'importance' => 'low',
+        'type' => 'font/ttf',
+        'as' => 'font',
+        'crossorigin' => 'anonymous',
+    ],
 ]);
 
 
