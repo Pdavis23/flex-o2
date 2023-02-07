@@ -83,13 +83,20 @@ define('GRANOLA_ACF_OPTIONS_PAGES', [
 // Preloads.
 // ----------------------------------------------------
 define('GRANOLA_PRELOAD_ASSETS', [
-    // [
-    //     'href' => \Granola\Asset::URL('static/WebFont-Regular.woff2'),
-    //     'importance' => 'low',
-    //     'type' => 'font/woff2',
-    //     'as' => 'font',
-    //     'crossorigin' => 'anonymous',
-    // ],
+    [
+        'href' => \Granola\Asset::URL('static/TitilliumWeb-Bold.ttf'),
+        'importance' => 'low',
+        'type' => 'font/ttf',
+        'as' => 'font',
+        'crossorigin' => 'anonymous',
+    ],
+    [
+        'href' => \Granola\Asset::URL('static/TitilliumWeb-Regular.ttf'),
+        'importance' => 'low',
+        'type' => 'font/ttf',
+        'as' => 'font',
+        'crossorigin' => 'anonymous',
+    ],
 ]);
 
 
