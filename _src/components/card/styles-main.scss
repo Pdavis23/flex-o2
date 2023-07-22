@@ -206,7 +206,7 @@
             padding-top: 0;
         }
 
-        &-hospital {
+        &#{$this}--type--testimonial-hospital {
             --accent--color: var(--color--seafoam);
         }
 
