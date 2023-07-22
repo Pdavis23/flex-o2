@@ -10,6 +10,7 @@ const allowedCoreBlocks = [
     'core/heading',
     'core/gallery',
     'core/list',
+    'core/list-item',
     'core/quote',
     'core/shortcode',
     // 'core/archives',
