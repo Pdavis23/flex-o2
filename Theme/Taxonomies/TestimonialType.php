@@ -6,9 +6,9 @@
 
 namespace Theme\Taxonomies;
 
-class Location
+class TestimonialType
 {
-    protected const SLUG = 'location';
+    protected const SLUG = 'testimonial-type';
 
     public static function init(): void
     {
@@ -30,13 +30,14 @@ class Location
         \register_extended_taxonomy(
             self::SLUG,
             [
-                'event',
+                'testimonial',
             ],
             [
                 // Core taxonomy configuration.
-                'hierarchical'      => true,
+                'hierarchical'      => false,
                 'show_admin_column' => true,
                 'show_in_rest'      => true,
+                'public'            => false,
 
                 // Extended taxonomy configuration.
                 'meta_box'         => 'simple',
@@ -46,8 +47,8 @@ class Location
             ],
             [
                 // Override the base names used for labels (optional).
-                'singular' => __('Location', 'granola'),
-                'plural'   => __('Locations', 'granola'),
+                'singular' => __('Testimonial Type', 'granola'),
+                'plural'   => __('Testimonial Types', 'granola'),
                 'slug'     => self::SLUG,
             ]
         );

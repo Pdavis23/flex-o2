@@ -276,12 +276,70 @@
                 "id": ""
             },
             "choices": {
-                "post": "Posts"
+                "post": "Posts",
+                "testimonial": "Testimonials"
             },
             "allow_null": 0,
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
+        },
+        {
+            "key": "field_64bbb35e8bb73",
+            "label": "Testimonial Types",
+            "name": "testimonial_type",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e6917d1dc324",
+                        "operator": "==",
+                        "value": "testimonial"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "testimonial-type",
+            "field_type": "radio",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_64bbb918ca37c",
+            "label": "Display As Slider",
+            "name": "posts_slider",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e6917d1dc324",
+                        "operator": "==",
+                        "value": "testimonial"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5e69183fdc325",
@@ -296,6 +354,18 @@
                         "field": "field_5e691705dc321",
                         "operator": "==",
                         "value": "recent"
+                    },
+                    {
+                        "field": "field_64bbb918ca37c",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64bbb918ca37c",
+                        "operator": "!=",
+                        "value": "1"
                     }
                 ]
             ],
@@ -371,7 +441,15 @@
             "type": "button_group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64bbb918ca37c",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -444,7 +522,15 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64bbb918ca37c",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -473,7 +559,15 @@
             "type": "true_false",
             "instructions": "Only compatible with align full.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64bbb918ca37c",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "50",
                 "class": "",
@@ -504,5 +598,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1658263556
+    "modified": 1690024701
 }

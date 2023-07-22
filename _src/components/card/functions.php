@@ -71,6 +71,35 @@ function filterArgs(array $args): array
                 $metaAuthor = \Theme\Meta\ObjectMeta::getObjectAuthor($object);
 
                 $args['content']['meta'] .= $metaDate ?? null;
+            } elseif ($object->post_type === 'testimonial') {
+                $args['type'] = $object->post_type;
+
+                if ($quote = get_field('quote', $object->ID)) {
+                    $args['content']['heading'] = $quote;
+                }
+
+                if ($citation = get_field('citation', $object->ID)) {
+                    $args['content']['text'] = $citation;
+                }
+
+                if ($citation_affiliation = get_field('citation_affiliation', $object->ID)) {
+                    $args['content']['text'] = (!empty($args['content']['text']) ? $args['content']['text'] . ' <span class="g-card__content__divider"></span> ' . $citation_affiliation : $citation_affiliation);
+                }
+
+                $args['content']['url'] = false;
+                $args['show_read_more'] = false;
+
+                // Labels
+                $testimonial_type = \Theme\Meta\ObjectMeta::getObjectLabels($object->ID, [
+                    'limit' => 1,
+                    'taxonomies' => [
+                        'testimonial-type',
+                    ],
+                ]);
+
+                if (!empty($testimonial_type)) {
+                    $args['classes'][] = 'g-card--type--testimonial-' . $testimonial_type[0]['slug'];
+                }
             }
         } elseif ($args['object'] instanceof \WP_Term) {
             // ------------------------------------------

@@ -38,6 +38,13 @@ function filterArgs(array $args): array
             }
         } else {
             if ($args['card_source'] === 'recent') {
+
+                if ($args['posts_slider']) {
+                    $args['limit'] = 5;
+                    $args['classes'][] = 'cards--slider';
+                    // $args['classes'][] = 'alignfull';
+                    $args['align'] = 'full';
+                }
                 $query = [
                     'post_type' => $args['post_type'],
                     'posts_per_page' => $args['limit'],
@@ -47,6 +54,20 @@ function filterArgs(array $args): array
 
                 if (!empty($args['tag'])) {
                     $query['tag__in'] = $args['tag'];
+                }
+
+                if (!empty($args['testimonial_type'])) {
+                    $query['tax_query'] = [
+                        'relationship' => 'AND',
+                    ];
+
+                    $query['tax_query'][] = [
+                        [
+                            'taxonomy' => 'testimonial-type',
+                            'field'    => 'term_id',
+                            'terms'    => $args['testimonial_type'],
+                        ],
+                    ];
                 }
 
                 $query = new \WP_Query($query);

@@ -58,13 +58,14 @@ require_once 'config.php';
 // ----------------------------------------------------
 // Custom Post Types.
 // ----------------------------------------------------
-\Theme\PostTypes\CaseStudy::init();
+// \Theme\PostTypes\CaseStudy::init();
+\Theme\PostTypes\Testimonial::init();
 \Theme\PostTypes\Post::init();
 
 // ----------------------------------------------------
 // Custom Taxonomies.
 // ----------------------------------------------------
-// \Theme\Taxonomies\Location::init();
+\Theme\Taxonomies\TestimonialType::init();
 \Theme\Taxonomies\Category::init();
 
 // ----------------------------------------------------

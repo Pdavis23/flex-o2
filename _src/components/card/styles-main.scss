@@ -68,6 +68,7 @@
 
     &__heading {
         @include typestyle-h5;
+        @include no-first-last-margin;
 
         margin-top: 0;
         margin-bottom: 0;
@@ -92,6 +93,14 @@
 
         flex: 1;
         margin-top: var(--space--xxs);
+
+        &__divider {
+            display: inline-block;
+            width: 0.5em;
+            height: 0.5em;
+            background: var(--accent--color);
+            border-radius: 50%;
+        }
     }
 
     &__meta {
@@ -157,6 +166,50 @@
         #{$this}__read-more {
             align-self: flex-start;
         }
+    }
+
+    &--type--testimonial {
+        --g-card--inner-padding-x: 0;
+        --g-card--inner-padding-y: 0;
+        --g-card--max-width: initial;
+        --g-card--icon--size: #{rem(100)};
+        --g-card--border-radius: 0;
+        --g-card--box-shadow: 0;
+
+        @include mask-icon();
+
+        @include mq(large) {
+            --g-card--icon--size: #{rem(150)};
+        }
+
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: var(--g-card--icon--size);
+            height: var(--g-card--icon--size);
+            background: var(--accent--color);
+            mask-image: url(#{asset-path('images/icons/quote.svg')});
+            opacity: 0.8;
+        }
+
+        #{$this}__header {
+            z-index: 1;
+            flex: initial;
+            padding: var(--space--s);
+            border: #{rem(15)} solid var(--accent--color);
+            margin-right: calc(var(--g-card--icon--size) - var(--space--xxs));
+            background: var(--color--white);
+        }
+
+        #{$this}__inner {
+            padding-top: 0;
+        }
+
+        &-hospital {
+            --accent--color: var(--color--seafoam);
+        }
+
     }
 
     // Alternate style with a rounded, inset image.
