@@ -73,6 +73,7 @@ function filterArgs(array $args): array
                 $args['content']['meta'] .= $metaDate ?? null;
             } elseif ($object->post_type === 'testimonial') {
                 $args['type'] = $object->post_type;
+                $args['background'] = 'seafoam';
 
                 if ($quote = get_field('quote', $object->ID)) {
                     $args['content']['heading'] = $quote;

@@ -177,39 +177,50 @@
         --g-card--box-shadow: 0;
 
         @include mask-icon();
+        @include blockquote();
+
+        height: auto;
+        min-height: auto;
+        text-align: left;
+        margin-bottom: auto;
 
         @include mq(large) {
             --g-card--icon--size: #{rem(150)};
         }
 
+        &.has-background {
+            --accent--color: var(--color--grey);
+        }
+
         &::after {
             position: absolute;
-            top: 0;
-            right: 0;
-            width: var(--g-card--icon--size);
-            height: var(--g-card--icon--size);
-            background: var(--accent--color);
+            top: var(--blockquote--padding);
+            right: var(--blockquote--padding);
+            background: var(--color--mulberry);
             mask-image: url(#{asset-path('images/icons/quote.svg')});
-            opacity: 0.8;
         }
 
         #{$this}__header {
             z-index: 1;
             flex: initial;
-            padding: var(--space--s);
-            border: #{rem(15)} solid var(--accent--color);
-            margin-right: calc(var(--g-card--icon--size) - var(--space--xxs));
-            background: var(--color--white);
+            margin-right: calc(var(--block--icon--size) - var(--space--xxs));
+        }
+
+        #{$this}__heading {
+            font-weight: var(--type--1--font-weight);
+        }
+
+        #{$this}__content {
+            font-size: 1.2rem;
         }
 
         #{$this}__inner {
             padding-top: 0;
         }
 
-        &#{$this}--type--testimonial-hospital {
-            --accent--color: var(--color--seafoam);
-        }
-
+        // &#{$this}--type--testimonial-hospital {
+        //     --accent--color: var(--color--seafoam);
+        // }
     }
 
     // Alternate style with a rounded, inset image.

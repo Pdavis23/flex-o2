@@ -72,6 +72,11 @@ function filterArgs(array $args): array
 
                 $query = new \WP_Query($query);
                 $objects = $query->posts;
+
+                // Randomiser is set and is true
+                if (isset($args['posts_randomise']) && $args['posts_randomise']) {
+                    shuffle($objects);
+                }
             } elseif ($args['card_source'] === 'selected') {
                 $objects = get_field('selected');
             }

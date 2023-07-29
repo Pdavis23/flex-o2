@@ -342,6 +342,33 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_64c4e75d65191",
+            "label": "Randomise Posts",
+            "name": "posts_randomise",
+            "type": "true_false",
+            "instructions": "Use this to change from the most recent, to a random order.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e6917d1dc324",
+                        "operator": "==",
+                        "value": "testimonial"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5e69183fdc325",
             "label": "Limit",
             "name": "limit",
@@ -598,5 +625,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690024701
+    "modified": 1690625921
 }
