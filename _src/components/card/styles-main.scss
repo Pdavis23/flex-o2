@@ -98,6 +98,8 @@
             display: inline-block;
             width: 0.5em;
             height: 0.5em;
+            margin-right: var(--space--xxxs);
+            margin-left: var(--space--xxxs);
             background: var(--accent--color);
             border-radius: 50%;
         }
@@ -203,7 +205,14 @@
         #{$this}__header {
             z-index: 1;
             flex: initial;
-            margin-right: calc(var(--block--icon--size) - var(--space--xxs));
+
+            @include mq($until: large) {
+                margin-top: calc(var(--block--icon--size) + var(--space--xxs));
+            }
+
+            @include mq(large) {
+                margin-right: calc(var(--block--icon--size) - var(--space--xxs));
+            }
         }
 
         #{$this}__heading {

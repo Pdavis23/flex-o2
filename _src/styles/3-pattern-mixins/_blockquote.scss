@@ -16,7 +16,10 @@
 
     &.has-background {
         padding: var(--blockquote--padding);
-        padding-right: calc(var(--blockquote--padding) + var(--block--icon--size));
+
+        @include mq(large) {
+            padding-right: calc(var(--blockquote--padding) + var(--block--icon--size));
+        }
     }
 
     > :not(cite):not(.wp-block-quote__citation) {
