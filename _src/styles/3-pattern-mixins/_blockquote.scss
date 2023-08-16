@@ -25,6 +25,7 @@
     > :not(cite):not(.wp-block-quote__citation) {
         @include typestyle-h3;
 
+        padding-right: var(--block--icon--size);
         font-weight: var(--type--1--font-weight);
     }
 
