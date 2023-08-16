@@ -197,6 +197,7 @@
             scroll-snap-align: center;
 
             @include mq(small) {
+                min-height: #{rem(150)};
                 flex-basis: 42%;
             }
 
