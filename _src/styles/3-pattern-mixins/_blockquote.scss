@@ -56,5 +56,6 @@
         height: var(--block--icon--size);
         background: var(--accent--color);
         mask-image: url(#{asset-path('images/icons/quote.svg')});
+        transform: scale(-1);
     }
 }
