@@ -5,7 +5,12 @@
     --block--margin-top: var(--space--responsive--m);
     --block--margin-bottom: var(--space--responsive--m);
     --block--max-width: var(--width--responsive--xs);
-    --block--icon--size: #{rem(70)};
+    --block--icon--size: #{rem(45)};
+
+    @include mq(medium) {
+        --block--icon--size: #{rem(70)};
+
+    }
 
     @include no-first-last-margin;
     @include mask-icon();
